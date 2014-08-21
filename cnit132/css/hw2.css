@@ -42,17 +42,17 @@ ul#mainNav {
 	border-bottom: none;
 	display: block;
 	padding: 7px 5px 2px 30px;
-	background: #E7E7E7 url(./graphics/link.png) no-repeat left center;
+	background: #E7E7E7 url(../graphics/link.png) no-repeat left center;
 }
 
 #mainNav a:hover {
 	font-weight: bold;
-	background: #B2F511 url(./graphics/go.png) no-repeat 5px 50%;
+	background: #B2F511 url(../graphics/go.png) no-repeat 5px 50%;
 }
 
 /* special formatting for home page link */
 a#homeLink {
-	background: #E7E7E7 url(./graphics/home.png) no-repeat 5px 52%;
+	background: #E7E7E7 url(../graphics/home.png) no-repeat 5px 52%;
 }
 
 
@@ -66,7 +66,7 @@ a#homeLink {
 
 h2 {
 
-background-image: url('./graphics/background1.jpg');
+background-image: url(../graphics/background1.jpg);
 color: #a020f0;
 text-align: center;
 margin-top: 20px;

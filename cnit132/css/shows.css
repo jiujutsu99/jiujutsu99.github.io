@@ -1,6 +1,6 @@
 body {
 	font-family: 'Open Sans', sans-serif;
-	background:url(./graphics/stardust.png);
+	background:url(../graphics/stardust.png);
 }
 
 #header1 {
@@ -40,7 +40,8 @@ img.left {
 	margin-right: 10px;
 	border-radius: 10px;
 	border: #030305 solid 1px;
-}
+}
+
 
 img {
 	border-radius: 10px;

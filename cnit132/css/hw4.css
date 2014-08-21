@@ -1,6 +1,6 @@
 body {
 	font-family: 'Open Sans', sans-serif;
-	background:url(./graphics/hw4bg1.jpg);
+	background:url(../graphics/hw4bg1.jpg);
 	text-align: center;
 	/* IE hack */
 }
@@ -39,7 +39,8 @@ img.right {
 	margin-left: 10px;
 	border-radius: 10px;
 	border: #030305 solid 1px;
-}
+}
+
 
 img {
 	border-radius: 10px;

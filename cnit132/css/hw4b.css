@@ -1,6 +1,6 @@
 body {
 	font-family: 'Open Sans', sans-serif;
-	background:url(./graphics/hw4bg2.jpg);
+	background:url(../graphics/hw4bg2.jpg);
 	text-align: center;
 	/* IE hack */
 }

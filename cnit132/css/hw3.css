@@ -6,7 +6,7 @@ Reminder BROWN IS MARGIN AND GREEN IS PADDING
 
 body {
 	font-family: 'Open Sans', sans-serif;
-	background:url(./graphics/stardust.png);
+	background:url(../graphics/stardust.png);
 	text-align: center;
 	/* IE hack */
 }
