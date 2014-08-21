@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+
+<title>Password Protection page</title>
+
+<script type="text/javascript">
+/* ####################################
+   function checkpass() is executed when the 
+   user clicks the form's submit button
+   #################################### */
+function checkpass() {
+// Set error msg and retrieve entered password from form
+// Note that myform is the name of the form and pass is the name of the input password box
+
+    var errormsg = "Incorrect Password!!";
+    var pass = document.myform.pas.value;
+
+// Check is entered password = rosebud and if so, then alert "correct"
+// Then change location to the form page named "h9samp.htm"
+// else if entered password is not = rosebud then alert error msg
+// and clear input password box and move cursor back to it
+
+    if (pass == "rosebud") {
+        alert("The password is correct");
+        window.location = "hw7.html";
+    }
+    else {
+        window.alert(errormsg);
+        document.myform.pas.value = "";
+        document.myform.pas.focus();
+    }
+}
+</script>
+
+<link rel="stylesheet" type="text/css" href="hw9a.css">
+
+</head>
+
+<body>
+
+<div id="content1">
+  <div id="content2">
+     <h1 class="center">Password Protection Page</h1>
+
+     <p>The access to the form that you are seeking is password-protected.
+	Please enter and submit your password for accessing this form.</p>
+
+     <form id="myform" name="myform" method="post">
+	Password: <input type="password" name="pas" id="pas" size="8" maxlength="8">
+	<br><br>
+
+	<!-- checkpass() is called when submit button clicked -->
+
+	<input type="button" value="Submit" onclick="checkpass();">
+	<input type="reset" value="Reset">
+     </form>
+
+     <p id="validation">
+	<a href="http://validator.w3.org/check?uri=referer"><img src="./graphics/html.png" width="88" height="31" alt="Valid HTML!" title="Valid HTML!"></a>
+	<a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="./graphics/css.gif" width="88" height="31" alt="Valid CSS!" title="Valid CSS!"></a>
+     </p>
+
+  </div>
+</div>
+
+</body>
+
+</html>

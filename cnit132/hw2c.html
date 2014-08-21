@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+
+<title>Homework 2 part C -- Inline style</title>
+
+<style type="text/css">
+
+#content {
+	width:900px;
+	margin: 0px auto; padding: 15px;
+        text-align: left; /* Counteract to IE/Win Hack */
+	border:1px dashed #333;
+	background-color:#eee;
+         }    
+
+
+/* NAVIGATION */
+
+
+ul#mainNav {
+
+	padding: 0;
+	list-style: none;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 160px; 
+        
+}
+#mainNav li {
+	float: left;
+	width: 12em;
+}
+
+#mainNav a {
+	text-decoration: none;
+	color: #000000;
+	font-size: 11px;
+
+	border: 1px dashed #999999;
+	border-bottom: none;
+	display: block;
+	padding: 7px 5px 2px 30px;
+	background: #E7E7E7 url(./graphics/link.png) no-repeat left center;
+}
+
+#mainNav a:hover {
+	font-weight: bold;
+	background: #B2F511 url(./graphics/go.png) no-repeat 5px 50%;
+}
+
+/* special formatting for home page link */
+a#homeLink {
+	background: #E7E7E7 url(./graphics/home.png) no-repeat 5px 52%;
+}
+
+
+
+/* IE Fixes */
+
+/* force hover on entire width of  link */
+* html #mainNav a {
+	height: 1px;
+}
+
+
+.center {text-align: center;}
+
+#box
+{
+font-size:10pt; text-align:center; font-weight:bold; margin-left:280px; 
+margin-right:280px; color:#a020f0; background:#ffff00;
+}
+
+#header2
+{
+background-image: url('./graphics/background1.jpg'); color:#a020f0; text-align:center;
+margin-top:20px; margin-left:150px; margin-right:150px; font-weight:bold; font-style:normal; 
+font-variant:normal; font-size:24px; font-family:cursive
+}
+
+#header5
+{
+font-size:24px; color:black; font-family:cursive; text-align:left; 
+margin-left:100px; text-decoration:underline;
+}
+
+#header3
+{
+font-family:serif; font-size: 26px; color: #402960; text-align: left; margin-left:100px;
+}
+
+</style>
+
+</head>
+
+<body style="background:url(./graphics/valentines2.jpg);">
+
+<div id="content">
+
+<section style="background-color: #f4008a;">
+
+<ul id="mainNav">
+
+    <li><a href="hw2a.html" target="_self" id="homeLink">Embedded Style Sheet</a></li>
+    <li><a href="hw2b.html" target="_self">Linked Style Sheet</a></li>
+    <li><a href="hw2c.html" target="_self">Inline Style Sheet</a></li>
+
+</ul>
+
+<br>
+
+<h2 style="color: #000; font: 40px garamond; text-align: center;
+text-shadow: 1px 1px 1px #fff;  margin-left: 215px; margin-right: 215px;">
+Valentine's Day</h2>
+
+<p style="background:url(./graphics/valentines1.jpg); color: #ff8100; text-align: justify; 
+font: 25px cursive; font-weight: bold; margin-left: 130px; margin-right: 100px; 
+line-height: 30px; border-style: solid; padding: 10px; border-color: blue; width: 600px;">
+
+Saint Valentine's Day, also known as Valentine's Day or the Feast of Saint Valentine, 
+is observed on February 14 each year. It is celebrated in many countries around the world, 
+although it remains a working day in most of them.
+</p>
+
+<br>
+
+<h2 id="header2">Valentines in Foreign Countries</h2>
+
+<h5 id="header5">In China</h5>
+
+<div style="margin-left: 130px; margin-right: 190px; color: #fbfbfb; background:url(./graphics/valentines3.jpg); 
+text-align: justify; font: 20px cursive; line-height: 16pt; font-weight: bold; 
+border-style: solid; padding: 8px; border-color: red; width: 600px;">
+
+In China, the common situation is the man gives chocolate, flowers or both to the woman that 
+he loves. In Chinese, Valentine's Day is called lovers' festival. The so-called "Chinese 
+Valentine's Day" is the Qixi Festival, celebrated on the seventh day of the seventh month of 
+the lunar calendar. It commemorates a day on which a legendary cowherder and weaving maid are 
+allowed to be together. Valentine's Day on February 14 is not celebrated because it is often 
+too close to the Chinese New Year, which usually falls on either January or February.
+</div>
+
+<h3 id="header3">In France</h3>
+
+<p style="background:url(./graphics/valentines1.jpg); color: #ff8100; text-align: justify; 
+font: 25px cursive; font-weight: bold; margin-left: 130px; margin-right: 100px; 
+line-height: 30px; border-style: solid; padding: 10px; border-color: blue; width: 600px;">
+
+In France, a traditionally Catholic country, Valentine's Day is known simply as "Saint Valentin", 
+and is celebrated in much the same way as other western countries.
+</p>
+
+<div id="box">
+<h3>Love is forever</h3>
+</div>
+
+<br>
+
+<p class="center">
+<a href="http://en.wikipedia.org/wiki/Valentine's_Day">Source: Wikipedia</a>
+</p>
+
+<br>
+
+</section>
+
+</div>
+
+<footer>
+
+<p class="center">
+<a href="http://validator.w3.org/check?uri=referer">
+<img style="border:0;width:88px;height:31px" src="./graphics/html.png"
+alt="Validate HTML5"></a>
+
+<a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3">
+<img style="border:0;width:88px;height:31px" src="./graphics/css.gif"
+alt="Validate CSS"></a>
+</p>
+
+</footer>
+
+</body>
+</html>

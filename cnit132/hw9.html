@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+
+<title>CNIT 132 - HW 9</title>
+
+<script type="text/javascript">
+
+//<![CDATA[
+
+txtsize=0;
+maxsize=45;
+
+var timer;
+
+/* #######################################
+   Grow text
+   Execute function writeMsg() once after a delay of 50 milliseconds
+   text grows from 0 pixels to 24 pixels
+   ####################################### */
+function writeMsg() {
+  if (txtsize<maxsize) {
+    document.getElementById('msg').style.fontSize=txtsize+"px"
+    txtsize++
+    timer=setTimeout("writeMsg()",50)
+  }
+}
+
+/* #######################################
+   stop timers after page finishes loading
+   ####################################### */
+function stopTimer() {
+  clearTimeout(timer)
+}
+
+function stopInt() {
+  clearInterval(timergrow)
+}
+
+
+/* ##########################
+   switch image on mouse over
+   ########################## */
+function switchImage() {
+  document.getElementById("foxpup").src ="./graphics/fox.jpg"
+} 
+
+
+/* ##########################
+   restore image on mouse out
+   ########################## */
+function restoreImage() {
+  document.getElementById("foxpup").src ="./graphics/forest.jpg"
+}
+
+
+/* ##########################
+   open new window on click
+   ########################## */
+function openLink(myLink) {
+  window.open(myLink, "marian", "width=800,height=640");
+}
+
+/* #############
+   jump to link
+   ############# */
+function goToPage(form) {
+  var myindex=form.link.selectedIndex
+  location=form.link.options[myindex].value;
+}
+
+/*]]>*/
+</script>
+
+
+<script type="text/javascript" src="http://hills.ccsf.edu/~rzhang8/CNIT132/jquery.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+  $("button").click(function() {
+    $("#foxpup").fadeTo("slow",0.25);
+  });
+});
+
+</script>
+
+
+<link rel="stylesheet" type="text/css" href="hw9.css">
+
+</head>
+
+<body onload="writeMsg();" onunload="stopTimer();">
+
+<div id="topbar1">
+  <div id="topbar2">
+<p>
+<a href="index.html">HW 1</a> | 
+<a href="hw2c.html">HW2</a> |
+<a href="hw3.html">HW3</a> |
+<a href="hw4.html">HW4</a> | 
+<a href="hw5.html">HW5</a> | 
+<a href="hw6.html">HW6</a> | 
+<a href="hw7.html">HW7</a> | 
+<a href="hw8.html">HW8</a> | 
+<a href="hw9.html">HW9</a> |
+</p>
+  </div>
+</div>
+
+<br><br>
+
+<div id="content1">
+   <div id="content2">
+     <h1 class="center"><span id="msg">Interesting....</span></h1>
+
+     <p class="center">
+	<a href="#" onclick="alert('zZzzzZZZZzzzzzZZZZ');">
+	  <img src="./graphics/forest.jpg" width="550" height="365" alt="foxpup" title="foxpup" id="foxpup" onmouseover="switchImage()" onmouseout="restoreImage()">
+	</a>
+     </p>
+
+     <form><input type="button" value="Get an alert" onclick="alert('Moo Moo');"></form>
+
+     <p class="content">
+	<a href="#" onClick="openLink('http://www.google.com/');">Click Here To Get A New Window</a>
+
+	<a href="hw9a.html">Password Protected Page</a>
+      <br>
+        <button type="button">Click to fade picture</button>
+      </p>
+
+      <p>Read about current events:</p>
+	<form name="myform">
+	<select name="link">
+	<option value=" " selected>--Select--</option>
+	<option value="https://www.youtube.com/user/vicenews">Vice News</option>
+	<option value="http://www.npr.org/">NPR</option>
+	<option value="http://www.forbes.com/">Forbes</option>
+	</select>
+	<input type="button" value="Go!" onclick="goToPage(this.form)" />
+	</form>
+  </div>
+</div>
+
+
+<div id="bottomdiv">
+  <div id="bottombar">
+    <a href="index.html">Return Home</a>
+
+    <a href="mailto:rzhang8@mail.ccsf.edu">rzhang8@mail.ccsf.edu</a>
+
+    <a href="http://validator.w3.org/check?uri=referer"><img src="./graphics/html.png" width="88" height="31" alt="Valid HTML!" title="Valid HTML!"></a>
+
+    <a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="./graphics/css.gif" width="88" height="31" alt="Valid CSS!" title="Valid CSS!"></a>
+  <br>
+    <script type="text/javascript">
+    var dateModified = document.lastModified;
+    mydate = dateModified.slice(0,16);
+    document.write("Last updated: " + mydate);
+    </script>
+  </div>
+</div>
+
+</body>
+
+</html>

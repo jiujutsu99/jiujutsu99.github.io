@@ -1,0 +1,112 @@
+body {
+	background:url(./graphics/stardust.png);
+}
+
+
+/* #################################
+    This area styles the title header
+   #################################*/
+
+#topbar1 {
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+	background-color: #4b5f69;
+	width: 100%;
+	margin: 0px auto;
+	height: 50px;
+	padding:15px 20px 50px 15px;
+}
+
+#topbar2 {
+	width: 850px;
+	margin: 0px auto;
+	color: black;
+	padding:15px 20px 20px 10px;
+}
+
+#topbar2 a {
+	color:white;
+	font-size:18px;
+	display: inline-block;
+	padding: 4px 10px 4px 10px;
+	margin:5px;
+	border-radius: 5px;
+	text-decoration: none;
+}
+
+#topbar2 a:hover { background-color:#2980b9; }
+
+
+/* #############################################
+   This area styles the main content of the page
+   #############################################*/
+
+#content1 {
+	font-family: 'Open Sans', sans-serif;
+	width: 100%;
+	padding: 10px;
+}
+
+#content2 {
+	background-color: #4b5f69;
+	width: 800px;
+	height: 600px;
+	margin: 0px auto;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+.content {
+	font-family: 'Open Sans', sans-serif;
+	color: #CAD3CF;
+	font-size: 20px;
+}
+
+.content a {
+	color:white;
+	font-size:18px;
+	display: inline-block;
+	padding: 4px 10px 4px 10px;
+	margin:5px;
+	border-radius: 5px;
+	text-decoration: none;
+}
+
+.content a:hover { background-color:#2980b9; }
+
+
+/* ################################
+   This area styles the bottom bar
+   ################################*/
+
+#bottomdiv {
+	font-family: 'Open Sans', sans-serif;
+	width: 100%;
+	padding: 10px;
+}
+
+#bottombar {
+	background-color: #4b5f69;
+	width: 800px;
+	margin: 0px auto;
+	color: white;
+	text-align: center;
+	padding: 0px 20px 0px 20px;
+	font-size: 18px;
+	border-radius: 10px;
+}
+
+#bottombar a {
+	color:white;
+	font-size:18px;
+	display: inline-block;
+	padding: 4px 10px 4px 10px;
+	margin:5px;
+	border-radius: 5px;
+	text-decoration: none;
+}
+
+#bottombar a:hover {
+	background-color:#2980b9;
+}
+

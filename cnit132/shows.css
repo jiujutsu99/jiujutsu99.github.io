@@ -1,0 +1,102 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	background:url(./graphics/stardust.png);
+}
+
+#header1 {
+	width: 100%;
+	padding: 10px;
+}
+
+#hheader1 {
+	background-color: #4b5f69;
+	width: 800px;
+	height: 1000px;
+	margin: 0px auto;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+.content {
+	color: white;
+	text-align: justify;
+	font-size: 20px;
+}
+
+.content2 {  
+	margin: 0px auto; 
+        background: #f5f5dc;  width: 350px; border: 0px; 
+        padding: 45px 20px; border-radius: 25px;  text-align: center;
+}
+
+.content3 {  
+	margin: 0px auto; 
+        background: #f5f5dc;  width: 650px; border: 0px; 
+        padding: 45px 20px; border-radius: 25px;  text-align: center;
+}
+
+img.left {
+	float: left;
+	margin-right: 10px;
+	border-radius: 10px;
+	border: #030305 solid 1px;
+}
+
+img {
+	border-radius: 10px;
+}
+
+#bottombar {
+	width: 100%;
+	padding: 10px;
+}
+
+#bbottombar {
+	background-color: #4b5f69;
+	width: 800px;
+	margin: 0px auto;
+	color: white;
+	text-align: center;
+	padding: 0px 20px 0px 20px;
+	font-size: 18px;
+	border-radius: 10px;
+}
+
+#bottommenu a {
+	color:white;
+	font-size:18px;
+	display: inline-block;
+	padding: 4px 10px 4px 10px;
+	margin:5px;
+	border-radius: 5px;
+	text-decoration: none;
+}
+
+#bottommenu a:hover {
+	background-color:#2980b9;
+}
+
+
+
+
+
+h3 {
+color : #000000;
+font-size : 20pt;
+text-align : center;
+font-family : 'papyrus';
+text-shadow : 7px 7px 7px #000;
+}
+
+#boxShadow
+
+{
+margin-left: 275px;
+margin-right: 200px;
+width:300px;
+height:30px;
+background-color:gray;
+-moz-box-shadow: 10px 10px 5px #888888; /* Firefox 3.6 and earlier */
+-webkit-box-shadow: 10px 10px 5px #888888; /* Safari */
+box-shadow: 10px 10px 5px #888888;
+}

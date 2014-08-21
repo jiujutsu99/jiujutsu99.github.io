@@ -1,0 +1,71 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	background:url(./graphics/stardust.png);
+}
+
+/* #############################################
+   This area styles the main content of the page
+   #############################################*/
+
+#header1 {
+	width: 100%;
+	padding: 10px;
+}
+
+#hheader1 {
+	background-color: #5E8786;
+	width: 800px;
+	height: 640px;
+	margin: 0px auto;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+/* ################################
+   This area styles the bottom bar
+   ################################*/
+
+#bottomdiv {
+	font-family: 'Open Sans', sans-serif;
+	width: 100%;
+	padding: 10px;
+}
+
+#bottombar {
+	background-color: #5E8786;
+	width: 800px;
+	margin: 0px auto;
+	color: white;
+	text-align: center;
+	padding: 0px 20px 0px 20px;
+	font-size: 18px;
+	border-radius: 10px;
+}
+
+#bottombar a {
+	color:white;
+	font-size:18px;
+	display: inline-block;
+	padding: 4px 10px 4px 10px;
+	margin:5px;
+	border-radius: 5px;
+	text-decoration: none;
+}
+
+#bottombar a:hover {
+	background-color:#2980b9;
+}
+
+
+/* ################################
+          Miscellaneous
+   ################################*/
+
+h3 {
+	font-family: 'papyrus';
+	font-size : 40px;
+	color : #FFFFFF;
+	text-align :center;
+	text-shadow : 7px 7px 7px #FFFFFF;
+}
+

@@ -1,0 +1,205 @@
+body {
+	background-image: url('./graphics/cat.jpg');
+	background-repeat: repeat-y;
+	background-color: #353439;
+	background-position: right;
+}
+
+#divbackground {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	background-image: url('./graphics/cat.jpg');
+	background-repeat: repeat-y;
+	width: 125px;
+	height: 950px; 
+}
+
+
+
+
+/* #################################
+    This area styles the title header
+   #################################*/
+
+#title {
+	font-family: 'papyrus';
+	font-size : 50px;
+	color : #FFFFFF;
+	text-align :center;
+	text-shadow : 7px 7px 7px #FFFFFF;
+}
+
+#titlepos {
+	position: absolute;
+	left: 700px;
+	top: 10px;
+}
+
+
+/* #############################################
+   This area styles the main content of the page
+   #############################################*/
+
+
+#section1box {
+	position: absolute;
+	left: 520px;
+	top: 100px;
+	height: 400px;
+	width: 380px;
+	background-color: #4b5f69;
+	border: solid 1px #4b5f69;
+	border-radius: 10px;
+}
+
+#section1position {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+
+
+#section2box {
+	position: absolute;
+	left: 940px;
+	top: 100px;
+	height: 400px;
+	width: 380px;
+	background-color: #4b5f69;
+	border: solid 1px #4b5f69;
+	border-radius: 10px;
+}
+
+#section2position {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+
+#section2box a:hover {
+	background-color: #2980b9;
+}
+
+/* #################################
+   Styling the cat pictures in main
+   #################################*/
+
+#block1 {
+	position: absolute;
+	left: 255px;
+	top: 200px;
+	z-index: 10;
+}
+
+#block2 {
+	position: absolute;
+	left: 330px;
+	top: 300px;
+	z-index: 20;
+}
+
+#block3 {
+	position: absolute;
+	left: 255px;
+	top: 450px;
+	z-index: 10;
+}
+
+#block4 {
+	position: absolute;
+	left: 330px;
+	top: 545px;
+	z-index: 20;
+}
+
+
+/* #################################
+   Styling the tables in main
+   #################################*/
+
+#table1 {
+	position: absolute;
+	left: 520px;
+	top: 520px;
+	width: 380px;
+	height: 275px;
+	background-color: #4b5f69;
+	border: solid 1px #4b5f69;
+	border-radius: 10px;
+}
+
+#table1 a:hover {
+	background-color: #2980b9;
+}
+
+#table2 {
+	position: absolute;
+	left: 940px;
+	top: 520px;
+	width: 380px;
+	background-color: #4b5f69;
+	border: solid 1px #4b5f69;
+	border-radius: 10px;
+}
+
+table, th, td {
+	border-spacing: 4px;
+}
+
+table {
+	table-layout: fixed;
+	margin: 0px auto;
+	border: 1px solid #000000;
+	border-radius: 10px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+th, td {
+	border: 1px solid black;
+}
+
+/* ################################
+   This area styles the bottom bar
+   ################################*/
+
+#bottombar a {
+	font-family: 'Open Sans', sans-serif;
+	font-size:18px;
+	color:white;
+	display: inline-block;
+	margin:5px;
+	padding: 4px 10px 4px 10px;
+	border-radius: 5px;
+	text-decoration: none;
+}
+
+#bottombar a:hover {
+	background-color:#2980b9;
+}
+
+#bottombar {
+	font-size: 18px;
+	text-align: center;
+}
+
+#bottombarboxposition {
+	position: absolute;
+	left: 500px;
+	top: 880px;
+	height: 60px;
+	width: 880px;
+	background-color: #4b5f69;
+	border: solid 1px #4b5f69;
+	border-radius: 10px;
+}
+
+#bottombarposition {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	bottom: 10px;
+	right: 10px;
+}
+

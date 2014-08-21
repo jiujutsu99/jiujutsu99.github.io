@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+
+<title>CNIT 132 - HW 8b</title>
+
+<link rel="stylesheet" type="text/css" href="hw8b.css">
+
+</head>
+
+<body>
+
+<h3>HW 8b - Forms with PHP script</h3>
+
+<div id="header">
+   <div id="header1">
+	Hi visitor, please tell me a little about yourself below.<br>
+
+        <form action="../formA.php" method="post" autocomplete="on" name="myform">
+
+	<!-- ###input type text box### -->
+	<p>
+	First name:
+	<input type="text" size="20" maxlength="30" name="firstName">
+	<br>
+	Last name:
+	<input type="text" size="20" maxlength="30" name="lastName">
+	<br>
+	Email:
+	<input type="text" size="20" maxlength="30" name="email">
+	</p>
+
+	<!-- ###select items### -->
+	<p>
+	Are you male or female?
+	<input type="hidden" name="gender" value=""/>
+	<select name="gender">
+	<option value="male" selected>Male</option>
+	<option value="female">Female</option>
+	</select>
+	</p>
+
+	<!-- ###input type radio button###
+		NOTE: input type="hidden" is needed to prevent displaying an error
+		if the user fails to click a radio button-->
+	<p>
+	Choose your age group:<br>
+	<input type="hidden" name="agegroup" value=""/>
+	<input type="radio" name="agegroup" value="kid.">Kid<br>
+	<input type="radio" name="agegroup" value="teenager.">Teenager<br>
+	<input type="radio" name="agegroup" value="young adult.">Young Adult<br>
+	<input type="radio" name="agegroup" value="adult.">Adult<br>
+	<input type="radio" name="agegroup" value="retired.">Retired<br>
+	</p>
+
+	<!-- ###input type checkbox### 
+		NOTE: Each checkbox variable should have a different name and
+		input type="hidden" lines are needed to prevent displaying an error
+		if the user fails to check one of the boxes -->
+	<p>
+	What siblings do you have if any? (Choose one or more) <br>
+	<input type="hidden" name="sibling1" value=""/>
+	<input type="checkbox" name="sibling1" value="older brother, ">Older brother<br>
+
+	<input type="hidden" name="sibling2" value=""/>
+	<input type="checkbox" name="sibling2" value="younger brother, ">Younger brother<br>
+
+	<input type="hidden" name="sibling3" value=""/>
+	<input type="checkbox" name="sibling3" value="older sister, ">Older sister<br>
+
+	<input type="hidden" name="sibling4" value=""/>
+	<input type="checkbox" name="sibling4" value="younger sister, ">Younger sister<br>
+
+	<input type="hidden" name="sibling5" value=""/>
+	<input type="checkbox" name="sibling5" value="no siblings">None<br>
+	</p>
+
+
+	<!-- ###textarea box### -->
+	<p>
+	Write any comments about yourself below:
+	<br>
+	<textarea name="comments" cols="60" rows="8"></textarea>
+	</p>
+
+	<!-- ###submit & reset button### -->
+	<input type="submit" value="Submit"> 
+	<input type="reset" value="Clear">
+
+	</form>
+  </div>
+</div>
+
+
+<div id="bottomdiv">
+  <div id="bottombar">
+    <a href="hw8.html">Go Back</a>
+
+    <a href="mailto:rzhang8@mail.ccsf.edu">rzhang8@mail.ccsf.edu</a>
+
+    <a href="http://validator.w3.org/check?uri=referer"><img src="./graphics/html.png" width="88" height="31" alt="Valid HTML!" title="Valid HTML!"></a>
+
+    <a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="./graphics/css.gif" width="88" height="31" alt="Valid CSS!" title="Valid CSS!"></a>
+  <br>
+    <script type="text/javascript">
+    var dateModified = document.lastModified;
+    mydate = dateModified.slice(0,16);
+    document.write("Last updated: " + mydate);
+    </script>
+  </div>
+</div>
+
+</body>
+
+</html>

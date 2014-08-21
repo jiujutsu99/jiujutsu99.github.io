@@ -1,0 +1,118 @@
+/*
+Style Sheet for CNIT132
+Raymond Zhang -- rzhang8@mail.ccsf.edu
+Reminder BROWN IS MARGIN AND GREEN IS PADDING
+*/
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	background:url(./graphics/stardust.png);
+	text-align: center;
+	/* IE hack */
+}
+
+#header {
+	background-color: #4b5f69;
+	width: 100%;
+	margin: 0px auto;
+	height: 50px;
+	padding:15px 20px 50px 15px;
+}
+
+#hheader {
+	width: 850px;
+	margin: 0px auto;
+	color: black;
+	padding:15px 20px 20px 10px;
+}
+
+#header2 {
+	background-color: #4b5f69;
+	width: 650px;
+	margin: 0px auto;
+	height: 500px;
+	padding:15px 20px 50px 15px;
+	color: black;
+}
+
+#content {
+	width: 890px;
+	font-size: 18px;
+	margin: 0px auto;
+	padding: 20px;
+	color: white;
+	text-align: left;
+	/* IE hack */
+}
+
+#hheader a {
+	color:white;
+	font-size:18px;
+	display: inline-block;
+	padding: 4px 10px 4px 10px;
+	margin:5px;
+	border-radius: 5px;
+	text-decoration: none;
+}
+
+#header2 a {
+	color:white;
+	font-size:18px;
+	display: inline-block;
+	padding: 4px 10px 4px 10px;
+	margin:5px;
+	border-radius: 5px;
+	text-decoration: none;
+}
+
+#hheader a:hover { background-color:#2980b9; }
+
+#header2 a:hover { background-color:#2980b9; }
+
+
+table {
+	border-collapse: collapse;
+	border: solid 1px;
+	padding: 5px;
+	margin: 0px auto;
+}
+
+table, th, td { border: 1px solid black; }
+
+th, td { padding: 5px; }
+
+th.header1 { 
+	font-size: 25px;
+	background-color: black;
+	color: white;
+}
+
+#bottombar {
+	width: 100%;
+	padding: 10px 0px 10px 0px;
+}
+
+#bbottombar {
+	background-color: #4b5f69;
+	width: 800px;
+	margin: 0px auto;
+	color: white;
+	text-align: center;
+	padding: 10px;
+	font-size: 18px;
+	border-radius: 10px;
+}
+
+#bottommenu a {
+	color:white;
+	font-size:18px;
+	display: inline-block;
+	padding: 4px 10px 4px 10px;
+	margin:5px;
+	border-radius: 5px;
+	text-decoration: none;
+}
+
+#bottommenu a:hover {
+	background-color:#2980b9;
+}

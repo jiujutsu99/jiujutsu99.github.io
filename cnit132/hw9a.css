@@ -1,0 +1,51 @@
+body {
+	background:url(./graphics/stardust.png);
+}
+
+/* #############################################
+   This area styles the main content of the page
+   #############################################*/
+
+#content1 {
+	font-family: 'Open Sans', sans-serif;
+	width: 100%;
+	padding: 10px;
+	color: white;
+	font-size: 20px;
+}
+
+#content2 {
+	background-color: #4b5f69;
+	width: 600px;
+	height: 400px;
+	margin: 0px auto;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+#validation {
+	text-align: right;
+}
+
+.center {
+	text-align: center;
+}
+
+.content {
+	font-family: 'Open Sans', sans-serif;
+	color: black;
+	font-size: 20px;
+	text-align: center;
+}
+
+.content a {
+	color:white;
+	font-size:18px;
+	display: inline-block;
+	padding: 4px 10px 4px 10px;
+	margin:5px;
+	border-radius: 5px;
+	text-decoration: none;
+}
+
+.content a:hover { background-color:#2980b9; }

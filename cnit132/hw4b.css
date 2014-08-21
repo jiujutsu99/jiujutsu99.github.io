@@ -1,0 +1,57 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	background:url(./graphics/hw4bg2.jpg);
+	text-align: center;
+	/* IE hack */
+}
+
+#header1 {
+	background-color: #4b5f69;
+	width: 900px;
+	margin: 0px auto;
+	height: 700px;
+	padding:15px 20px 50px 15px;
+	border: #030305 solid 1px;
+	border-radius: 20px;
+}
+
+#hheader1 {
+	width: 850px;
+	margin: 0px auto;
+	padding:15px 20px 20px 10px;
+}
+
+
+#bottombar {
+	width: 100%;
+	height: 20px;
+	padding: 10px 0px 10px 0px;
+}
+
+#bbottombar {
+	font-family: 'Open Sans', sans-serif;
+	background-color: #4b5f69;
+	width: 910px;
+	margin: 0px auto;
+	color: white;
+	text-align: center;
+	padding: 10px;
+	font-size: 18px;
+	border: #030305 solid 1px;
+	border-radius: 20px;
+}
+
+#bottommenu a {
+	font-family: 'Open Sans', sans-serif;
+	color:white;
+	font-size:20px;
+	display: inline-block;
+	padding: 4px 10px 4px 10px;
+	margin:5px;
+	border-radius: 5px;
+	text-decoration: none;
+}
+
+#bottommenu a:hover {
+	background-color:#2980b9;
+}
