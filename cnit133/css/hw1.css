@@ -1,0 +1,13 @@
+table {
+	font-size: 16px; 
+	border: 1px solid black;
+	border-spacing: 10px;
+	border-collapse: collapse;
+}
+
+td, th {
+	font-family: 'Yellowtail', 'Sorts Mill Goudy', serif; 
+	padding: 5px;
+	border: 1px solid black;
+	height: 50px;
+}
