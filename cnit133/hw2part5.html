@@ -2,11 +2,22 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>CNIT 133 Homework 2 - Basic Operations</title>
+	<title>CNIT 133 Homework 2 - Part 1</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
 	<link href="http://fonts.googleapis.com/css?family=Yellowtail|Sorts+Mill+Goudy" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="css/hw2.css">
+	<link rel="stylesheet" type="text/css" href="css/hw2part5.css">
+
+	<script>
+		function calculate() {
+			var amount = document.myform.result.value;
+			document.myform.num1.value = (amount * 0.59506).toFixed(2);
+			document.myform.num2.value = (amount * 1.09313).toFixed(2);
+			document.myform.num3.value = (amount * 0.73301).toFixed(2);
+			document.myform.num4.value = (amount * 102.53000).toFixed(2);
+			document.myform.num5.value = (amount * 12.92958).toFixed(2);
+		}
+	</script>
 </head>
 <body>
 	<nav class="navbar navbar-default" role="navigation">
@@ -37,45 +48,69 @@
 	    </div><!-- close navbar-collapse -->
 	  </div><!-- close container-fluid -->
 	</nav><!-- close navbar-default -->
+	
 
 	<div class="container">
 		<nav class="center">
-			HW2 | <a href="hw2part1.html">Part 1</a> |   
+			<a href="hw2.html">HW2</a> | 
+			<a href="hw2part1.html">Part 1</a> | 
 			<a href="hw2part2.html">Part 2</a> | 
 			<a href="hw2part3.html">Part 3</a> | 
-			<a href="hw2part4.html">Part 4</a> | 
-			<a href="hw2part5.html">Extra Credit</a>
+			<a href="hw2part4.html">Part 4</a> | Extra Credit
 		</nav>
+
 		<br>
 
-		<h4 class="title">Basic Operations</h4>
-		<table class="center">
-			<tr>
-				<th>Link</th>
-				<th>Description</th>
-			</tr>
-			<tr>
-				<td><a href="hw2part1.html">Part 1</a></td>
-				<td>document.writeln and document.write statements</td>
-			</tr>
-			<tr>
-				<td><a href="hw2part2.html">Part 2</a></td>
-				<td>Input 3 integers</td>
-			</tr>
-			<tr>
-				<td><a href="hw2part3.html">Part 3</a></td>
-				<td>jQuery</td>
-			</tr>
-			<tr>
-				<td><a href="hw2part4.html">Part 4</a></td>
-				<td>Calculation Table</td>
-			</tr>
-			<tr>
-				<td><a href="hw2part5.html">Extra Credit</a></td>
-				<td>Exchange Rates</td>
-			</tr>
-		</table>
+		<div class="center"><input type="button" id="flip" value="Click to slide the panel down or up"></div>
+		<div id="panel">
+			<form name="myform">
+				<table>
+					<tr class="centertext">
+						<td colspan="3">Monetary Exchange Rates</td>
+					</tr>
+					<tr class="centertext">
+						<td>Currency</td>
+						<td>Rate</td>
+						<td>Value</td>
+					</tr>
+					<tr>
+						<td>British Pound</td>
+						<td><input type="text" value="0.59506" disabled></td>
+						<td><input type="text" name="num1"></td>
+					</tr>
+					<tr>
+						<td>Canadian Dollar</td>
+						<td><input type="text" value="1.09313" disabled></td>
+						<td><input type="text" name="num2"></td>
+					</tr>
+					<tr>
+						<td>Euro</td>
+						<td><input type="text" value="0.73301" disabled></td>
+						<td><input type="text" name="num3"></td>
+					</tr>
+					<tr>
+						<td>Japanese Yen</td>
+						<td><input type="text" value="102.53000" disabled></td>
+						<td><input type="text" name="num4"></td>
+					</tr>
+					<tr>
+						<td>Mexican Peso</td>
+						<td><input type="text" value="12.92958" disabled></td>
+						<td><input type="text" name="num5"></td>
+					</tr>
+					<tr>
+						<td colspan="2">Enter Amount of U.S. Dollars</td>
+						<td><input type="text" name="result" id="result"></td>
+					</tr>
+				</table>
+			<div class="inputfont">
+				<input type="button" onclick="calculate();" value="Calculate">
+				<input type="reset" value="Reset">
+			</div>
+			</form>
+		</div>
 	</div>
+
 
 	<div class="navbar navbar-default navbar-fixed-bottom">
 		<div class="container">
@@ -89,5 +124,19 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="js/bootstrap.min.js"></script>
+
+	<script> 
+		$(document).ready(function() {
+		  $("#flip").click(function() {
+		    $("#panel").slideToggle("slow");
+		  });
+		});
+	</script>
+
+	<script>
+		$('#result').focus(function() {
+			$(this).css('background-color','#848484');
+		});
+	</script>
 </body>
 </html>
