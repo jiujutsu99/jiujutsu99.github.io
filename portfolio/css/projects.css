@@ -1,0 +1,13 @@
+body {
+	font-family: 'Raleway', sans-serif;
+	color: #172557;
+}
+
+body a {
+	color: #AA6839;
+	text-decoration: none;
+}
+
+body a:hover {
+	color: #552300;
+}
