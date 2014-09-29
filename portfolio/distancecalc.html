@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Distance Calculator</title>
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
+	<link href="css/distancecalc.css" type="text/css" rel="stylesheet">
+	<script>
+		calculate() {
+			var xdist = Math.abs(parseInt(document.myForm.x2.value) - parseInt(document.myForm.x1.value));
+			var ydist = Math.abs(parseInt(document.myForm.y2.value) - parseInt(document.myForm.y1.value));
+			var dist = Math.sqrt(Math.pow(xdist, 2) + Math.pow(ydist, 2));
+			document.myForm.reslt.value = dist;
+		}
+	</script>
+</head>
+<body>
+	<div id="contents">
+		<h3>Distance Calculator</h3>
+		<br><br>
+		<form name="myForm">
+			<table>
+				<tr>
+					<td>x1</td>
+					<td><input type="text" name="x1" size="10"></td>
+					<td>y1</td>
+					<td><input type="text" name="y1" size="10"></td>
+				</tr>
+				<tr>
+					<td>x2</td>
+					<td><input type="text" name="x2" size="10"></td>
+					<td>y2</td>
+					<td><input type="text" name="y2" size="10"></td>
+				</tr>
+				<tr colspan="2">
+					<td>Distance between 2 points:</td>
+					<td><input type="text" name="result" size="10"></td>
+				</tr>
+				<tr colspan="2">
+					<td><input type="button" onclick="calculate()" value="submit"></td>
+					<td><input type="reset" value="reset"></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+<script src="js/gAnalytics.js"></script>
+</body>
+</html>
