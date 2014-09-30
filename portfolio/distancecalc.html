@@ -12,6 +12,45 @@
 			var dist = Math.sqrt(Math.pow(xdist, 2) + Math.pow(ydist, 2));
 			document.myForm.result.value = dist.toFixed(2);
 		}
+
+		function isValid(a) {
+			if (a == NaN || a > 99999 || a < 1)
+				return false;
+		}
+
+		function quotient( a, b )
+		{
+			return Math.floor( a / b );
+		}
+
+		function remainder( a, b )
+		{
+			return a % b;
+		}
+
+		function displayDigits()
+		{
+			var input = parseInt(document.myForm2.num.value);
+			if (isValid(input) == false) {
+				document.findElementById("myInnerHtml").value = "Please enter correct value";
+			}
+
+
+			var divisor = 10000, digit;
+			var output = "";
+
+			while (input % divisor == input) {
+				divisor = quotient( divisor, 10 );
+			}
+
+			while (divisor >= 1) {
+				digit = quotient(input, divisor);
+				output += digit + " ";
+				input = remainder(input, divisor);
+				divisor = quotient( divisor, 10 );
+			}
+			document.myForm2.result.value = output;
+		}
 	</script>
 </head>
 <body>
@@ -43,6 +82,26 @@
 				<tr>
 					<td colspan="2"><input type="button" onclick="calculate()" value="Calculate"></td>
 					<td colspan="2"><input type="reset" value="Reset"></td>
+				</tr>
+			</table>
+		</form>
+
+		<br><br>
+
+		<h1>Formatting a number with space</h1>
+		<form name="myForm2">
+			<table>
+				<div id="myInnerHtml"></div>
+				<tr>
+					<td>Enter a number between 1 and 99999:</td>
+					<td><input type="text" name="num" size="10"></td>
+				<tr>
+				<tr>
+					<td colspan="2"><textarea rows="5" cols="33" name="result"></textarea></td>
+				</tr>
+				<tr>
+					<td><input type="button" onclick="displayDigits()" value="Calculate"></td>
+					<td><input type="reset" value="Reset"></td>
 				</tr>
 			</table>
 		</form>
