@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Project 4</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rajdhani">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/proj4.css">
+	<script>
+		function isValid(num) {
+			if (num == "" || parseInt(num) < 0 || parseInt(num) > 100)
+				return false;
+			else
+				return true;
+		};
+
+		function grade(score) {
+			if (score >= 90 && score <= 100)
+				return "A";
+			if (score >= 80 && score < 90)
+				return "B";
+			if (score >= 70 && score < 80)
+				return "C";
+			if (score >= 60 && score < 70)
+				return "D";
+			return "F";
+		};
+
+		function resetInnerHtml() {
+			document.getElementById("errorMsg").innerHTML = "";
+		};
+
+		function calc() {
+			resetInnerHtml();
+			var hwk = document.myform.hwk.value;
+			var midterm = document.myform.midterm.value;
+			var finalExam = document.myform.finalExam.value;
+			var acr = document.myform.acr.value;
+
+			if (isNaN(hwk) || isNaN(midterm) || isNaN(finalExam) || isNaN(acr)) {
+				document.getElementById("errorMsg").innerHTML = "Invalid! Non-numeric input!";
+				return;
+			}
+
+			if (!isValid(hwk) || !isValid(midterm) || !isValid(finalExam) || !isValid(acr)) {
+				document.getElementById("errorMsg").innerHTML = "Invalid! Input must be within 0 to 100";
+				return;
+			}
+
+			var finalavg = Math.round(0.5*hwk + 0.2*midterm + 0.2*finalExam + 0.1*acr);
+			letterGrade = grade(finalavg);
+
+			if (finalavg < 70) {
+				document.myform.result.value = "Your final average score is: " + finalavg + "\nYour letter grade is: " + letterGrade;
+				alert("Student must retake the course");
+			}
+			else {
+				document.myform.result.value = "Your final average score is: " + finalavg + "\nYour letter grade is: " + letterGrade;
+			}
+		};
+	</script>
+</head>
+<body>
+	<div id="contents">
+		<input type="button" id="flip" value="Click to Show/Hide Instructions">
+		<div id="panel">The following webpage contains the heading, student grades, and uses a script that inputs a student's homework average, mid-term exam score, final exam score, and participation grade (all as integers) to calculate the average.</div>
+		<br>
+		<form name="myform">
+			<table>
+				<tr>
+					<td colspan="2">Student Grades</td>
+				</tr>
+				<tr>
+					<td>Description:</td>
+					<td>Enter your scores:</td>
+				</tr>
+				<tr>
+					<td>Homework average</td>
+					<td><input type="text" name="hwk" size="10"></td>
+				</tr>
+				<tr>
+					<td>Midterm exam score</td>
+					<td><input type="text" name="midterm" size="10"></td>
+				</tr>
+				<tr>
+					<td>Final exam score</td>
+					<td><input type="text" name="finalExam" size="10"></td>
+				</tr>
+				<tr>
+					<td>Participation score</td>
+					<td><input type="text" name="acr" size="10"></td>
+				</tr>
+				<tr>
+					<td><input type="button" onclick="calc()" value="Calculate"></td>
+					<td><input type="reset" onclick="resetInnerHtml()" value="Reset"></td>
+				</tr>
+				<tr>
+					<td colspan="2"><textarea rows="5" cols="33" name="result"></textarea></td>
+				</tr>
+			</table>
+		</form>
+		<div id="errorMsg"></div>
+	</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#flip").click(function() {
+				$("#panel").slideToggle("slow");
+			});
+		});
+	</script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>	
+	<script src="js/gAnalytics.js"></script>
+</body>
+</html>

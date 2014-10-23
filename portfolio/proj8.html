@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Project 8</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rajdhani">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/proj8.css">
+
+	<script>
+		function resetInnerHtml() {
+			document.getElementById("errorMsg").innerHTML = "";
+		};
+
+		function celsius() {
+			resetInnerHtml();
+			var temp = document.myform.temp.value;
+			if (isNaN(temp) || temp == "") {
+				document.getElementById("errorMsg").innerHTML = "The fahrenheit entry is not a number";
+				return;
+			}
+			temp = parseInt(temp);
+			document.myform.result.value = temp + " degrees F to celsius is " + ((5/9)*(temp-32)).toFixed(2) + " degrees";
+		};
+
+		function fahrenheit() {
+			resetInnerHtml();
+			var temp = document.myform.temp.value;
+			if (isNaN(temp) || temp == "") {
+				document.getElementById("errorMsg").innerHTML = "The celsius entry is not a number";
+				return;
+			}
+			temp = parseInt(temp);
+			document.myform.result.value = temp + " degrees C to fahrenheit is " + ((9/5)*temp + 32).toFixed(2) + " degrees";
+		};
+	</script>
+</head>
+<body>
+	<div id="contents">
+		<form name="myform">
+			<table>
+				<tr>
+					<th colspan="2">Temperature Conversion</th>
+				</tr>
+				<tr>
+					<td>Enter your temperature:</td>
+					<td><input type="text" size="10" name="temp"></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="button" onclick="celsius()" value="Fahrenheit to Celsius"></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="button" onclick="fahrenheit()" value="Celsius to Fahrenheit"></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="reset" onclick="resetInnerHtml()" value="Reset"></td>
+				</tr>
+				<tr>
+					<td colspan="2"><textarea rows="5" cols="33" name="result"></textarea></td>
+				</tr>
+			</table>
+		</form>
+		<div id="errorMsg"></div>
+	</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>	
+	<script src="js/gAnalytics.js"></script>
+</body>
+</html>

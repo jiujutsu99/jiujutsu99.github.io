@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Project 7</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rajdhani">
+    <link rel="stylesheet" type="text/css" href="css/proj7.css">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>	
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+	<script>
+		function isPalindrome(num) {
+			var x1 = 0, x2 = num.length - 1;
+			while (x1 < x2) {
+				if (num.charAt(x1) != num.charAt(x2))
+					return false;
+				x1++;
+				x2--;
+			}
+			return true;
+		};
+
+		function calc() {
+			var num = document.myform.num.value;
+			if (isNaN(num) || num == "" || num.length != 5 || num.charAt(0) == 0) {
+				alert("Error. Make sure input is a 5 digit number not starting with zeros.");
+				return;
+			}
+
+			if(isPalindrome(num))
+				document.myform.result.value = "It's a palindrome";
+			else
+				document.myform.result.value = "It's not a palindrome";
+		};
+
+		$(function() {
+			$( "#dialog" ).dialog({
+				autoOpen: false,
+				show: { effect: "blind", duration: 1000 },
+				hide: { effect: "explode", duration: 1000 }
+		    });
+		    $( "#flip" ).click(function() {
+				$( "#dialog" ).dialog( "open" );
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="contents">
+		<input type="button" id="flip" value="Click here for instructions">
+		<div id="dialog" title="Instructions">Input a five-digit integer (not starting with zero) to display if it is a palindrome, not a palindrome, or an input error.</div>
+		<br><br>
+		<form name="myform">
+			<table>
+				<tr>
+					<td>Enter a 5-digit integer: </td>
+					<td><input type="text" size="10" name="num"></td>
+				<tr>
+				<tr>
+					<td><input type="button" onclick="calc()" value="Calculate"></td>
+					<td><input type="reset" value="Reset"></td>
+				</tr>
+				<tr>
+					<td colspan="2">Result: <input type="text" size="15" name="result"></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+	<script src="js/gAnalytics.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Project 2 Part 2</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link href="http://fonts.googleapis.com/css?family=Yellowtail|Sorts+Mill+Goudy" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/proj2part2.css">
+	<script type="text/javascript">
+		function calculate() {
+			var n1, n2, n3, sum, avg, product, min, max;
+			n1 = parseInt(document.myform.num1.value);
+			n2 = parseInt(document.myform.num2.value);
+			n3 = parseInt(document.myform.num3.value);
+			sum = n1 + n2 + n3;
+			avg = sum/3;
+			product = n1*n2*n3;
+			min = Math.min(n1, n2, n3);
+			max = Math.max(n1, n2, n3);
+			document.myform.result.value = ("The sum is: " + sum +"\nThe avg is: " + avg + "\nThe product is: " + product + "\nThe smallest is: " + min + "\nThe biggest is: " + max);
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		<nav class="center">
+			<a href="proj2part1.html">Part 1</a> | Part 2 | 
+			<a href="proj2part3.html">Part 3</a>
+		</nav>
+	</div>
+	<br>
+	<div class="container">
+		<form name="myform">
+			<table>
+				<tr>
+					<td>First Number:</td>
+					<td><input type="text" name="num1" size="10"></td>
+				</tr>
+				<tr>
+					<td>Second Number:</td>
+					<td><input type="text" name="num2" size="10"></td>
+				</tr>
+				<tr>
+					<td>Third Number:</td>
+					<td><input type="text" name="num3" size="10"></td>
+				</tr>
+				<tr>
+					<th colspan="2"><textarea rows="5" cols="33" name="result"></textarea></th>
+				</tr>
+				<tr>
+					<td><input type="button" onclick="calculate()" value="SUBMIT"></td>
+					<td><input type="reset" value="RESET"></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>	
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</body>
+</html>

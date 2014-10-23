@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Project 2 Part 3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link href="http://fonts.googleapis.com/css?family=Yellowtail|Sorts+Mill+Goudy" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/proj2part3.css">
+	<script>
+		function calculate() {
+			var n1, n2, n3, n4, n5, neg = 0, pos = 0, zeros = 0;
+			n1 = parseFloat(document.myform.num1.value);
+			n2 = parseFloat(document.myform.num2.value);
+			n3 = parseFloat(document.myform.num3.value);
+			n4 = parseFloat(document.myform.num4.value);
+			n5 = parseFloat(document.myform.num5.value);
+			var num = [n1, n2, n3, n4, n5];
+			for (var i = 0; i < 5; i++) {
+				if (num[i] > 0)
+					pos++;
+				else if (num[i] < 0)
+					neg++;
+				else
+					zeros++;
+			}
+			document.myform.result.value = ("Total positive numbers: " + pos + "\nTotal negative numbers: " + neg + "\nTotal zeros: " + zeros);
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		<nav class="center">
+			<a href="proj2part1.html">Part 1</a> | 
+			<a href="proj2part2.html">Part 2</a> | Part 3
+		</nav>
+
+		<br>
+
+		<form name="myform">
+			<table>
+				<tr>
+					<td>First Number:</td>
+					<td><input type="text" name="num1" size="10"></td>
+				</tr>
+				<tr>
+					<td>Second Number:</td>
+					<td><input type="text" name="num2" size="10"></td>
+				</tr>
+				<tr>
+					<td>Third Number:</td>
+					<td><input type="text" name="num3" size="10"></td>
+				</tr>
+				<tr>
+					<td>Fourth Number:</td>
+					<td><input type="text" name="num4" size="10"></td>
+				</tr>
+				<tr>
+					<td>Fifth Number:</td>
+					<td><input type="text" name="num5" size="10"></td>
+				</tr>
+				<tr>
+					<th colspan="2"><textarea rows="4" cols="33" name="result"></textarea></th>
+				</tr>
+				<tr>
+					<td><input type="button" onclick="calculate()" value="SUBMIT">&nbsp<input type="reset" value="RESET"></td>
+					<td><button type="button">FADE</button></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>	
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("button").click(function(){
+				$("textarea").fadeTo("slow",0.25);
+			});
+		});
+	</script>
+</body>
+</html>

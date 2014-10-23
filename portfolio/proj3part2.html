@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Project 3 Part 2</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link href="http://fonts.googleapis.com/css?family=Yellowtail|Sorts+Mill+Goudy" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/proj3part2.css">
+	<script>
+		function calculate() {
+			var amount = document.myform.result.value;
+			document.myform.num1.value = (amount * 0.59506).toFixed(2);
+			document.myform.num2.value = (amount * 1.09313).toFixed(2);
+			document.myform.num3.value = (amount * 0.73301).toFixed(2);
+			document.myform.num4.value = (amount * 102.53000).toFixed(2);
+			document.myform.num5.value = (amount * 12.92958).toFixed(2);
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		<nav class="center">
+			<a href="proj3part1.html">Part 1</a> | 
+			Part 2
+		</nav>
+
+		<br>
+
+		<div class="center"><input type="button" id="flip" value="Click to slide the panel down or up"></div>
+		<div id="panel">
+			<form name="myform">
+				<table>
+					<tr class="centertext">
+						<td colspan="3">Monetary Exchange Rates</td>
+					</tr>
+					<tr class="centertext">
+						<td>Currency</td>
+						<td>Rate</td>
+						<td>Value</td>
+					</tr>
+					<tr>
+						<td>British Pound</td>
+						<td><input type="text" value="0.59506" disabled></td>
+						<td><input type="text" name="num1"></td>
+					</tr>
+					<tr>
+						<td>Canadian Dollar</td>
+						<td><input type="text" value="1.09313" disabled></td>
+						<td><input type="text" name="num2"></td>
+					</tr>
+					<tr>
+						<td>Euro</td>
+						<td><input type="text" value="0.73301" disabled></td>
+						<td><input type="text" name="num3"></td>
+					</tr>
+					<tr>
+						<td>Japanese Yen</td>
+						<td><input type="text" value="102.53000" disabled></td>
+						<td><input type="text" name="num4"></td>
+					</tr>
+					<tr>
+						<td>Mexican Peso</td>
+						<td><input type="text" value="12.92958" disabled></td>
+						<td><input type="text" name="num5"></td>
+					</tr>
+					<tr>
+						<td colspan="2">Enter Amount of U.S. Dollars</td>
+						<td><input type="text" name="result" id="result"></td>
+					</tr>
+				</table>
+			<div class="inputfont">
+				<input type="button" onclick="calculate();" value="Calculate">
+				<input type="reset" value="Reset">
+			</div>
+			</form>
+		</div>
+	</div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>	
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script> 
+		$(document).ready(function() {
+		  $("#flip").click(function() {
+		    $("#panel").slideToggle("slow");
+		  });
+		});
+
+		$('#result').focus(function() {
+			$(this).css('background-color','#848484');
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Project 5</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rajdhani">
+	<link rel="stylesheet" type="text/css" href="css/proj5.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>	
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+
+    <script>
+		function isValid(num) {
+			if (num < 0 || isNaN(num) || num == "")
+				return false;
+			else
+				return true;
+		};
+
+    	function calc() {
+    		var item1 = document.myform.item1.value;
+    		var item2 = document.myform.item2.value;
+    		var item3 = document.myform.item3.value;
+    		var item4 = document.myform.item4.value;
+
+    		if (!isValid(item1) || !isValid(item2) || !isValid(item3) || !isValid(item4)) {
+    			alert("Invalid! Please enter a positive integer.");
+    			return;
+    		}
+
+    		var item1total = item1*239.99;
+    		var item2total = item2*129.75;
+    		var item3total = item3*99.95;
+    		var item4total = item4*350.89;
+    		var total = 200 + (item1total + item2total + item3total + item4total)*0.09;
+
+    		document.myform.item1total.value = item1total.toFixed(2);
+    		document.myform.item2total.value = item2total.toFixed(2);
+    		document.myform.item3total.value = item3total.toFixed(2);
+    		document.myform.item4total.value = item4total.toFixed(2);
+
+    		document.myform.combinedtotal.value = total.toFixed(2);
+    	};
+    </script>
+</head>
+<body>
+	<div id="contents">
+		<form name="myform">
+			<table>
+				<tr>
+					<td colspan="4">Weekly Gross Pay Calculator</td>
+				</tr>
+				<tr>
+					<td colspan="2">Enter your name:</td>
+					<td colspan="2"><input type="text" id="employee" name="employee" size="20" title="Please make sure that the salesperson's name is spelled correctly."></td>
+				</tr>
+				<tr>
+					<td>Item #</td>
+					<td>Price</td>
+					<td>Amount sold</td>
+					<td>Total</td>
+				</tr>
+				<tr>
+					<td>Item 1:</td>
+					<td>$239.99</td>
+					<td><input type="text" size="10" name="item1"></td>
+					<td><input type="text" size="10" name="item1total" disabled></td>
+				</tr>
+				<tr>
+					<td>Item 2:</td>
+					<td>$129.75</td>
+					<td><input type="text" size="10" name="item2"></td>
+					<td><input type="text" size="10" name="item2total" disabled></td>
+				</tr>
+				<tr>
+					<td>Item 3:</td>
+					<td>$99.95</td>
+					<td><input type="text" size="10" name="item3"></td>
+					<td><input type="text" size="10" name="item3total" disabled></td>
+				</tr>
+				<tr>
+					<td>Item 4:</td>
+					<td>$350.89</td>
+					<td><input type="text" size="10" name="item4"></td>
+					<td><input type="text" size="10" name="item4total" disabled></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="button" onclick="calc()" value="Calculate">&nbsp<input type="reset" value="Reset"></td>
+					<td>Amount earned:</td>
+					<td><input type="text" size="10" name="combinedtotal" disabled></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    <script>
+    	$(function() {
+    		$( document ).tooltip();
+    	});
+    </script>
+    <script src="js/gAnalytics.js"></script>
+</body>
+</html>

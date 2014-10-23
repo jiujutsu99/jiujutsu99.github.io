@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Project 6</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rajdhani">
+	<link rel="stylesheet" type="text/css" href="css/proj6.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	
+	<script>
+		function isValid(num) {
+			if (isNaN(num) || num == "")
+				return false;
+			else
+				return true;
+		};
+
+		function calc() {
+			var accnum = document.myform.accnum.value;
+			var bal = document.myform.bal.value;
+			var itemsTotal = document.myform.itemsTotal.value;
+			var creditTotal = document.myform.creditTotal.value;
+			var creditLimit = document.myform.creditLimit.value;
+
+			if (!isValid(accnum) || !isValid(bal) || !isValid(itemsTotal) || !isValid(creditTotal) || !isValid(creditLimit)) {
+				alert("Invalid! Please enter numbers only");
+				return;
+			}
+
+			accnum = parseInt(document.myform.accnum.value);
+			bal = parseInt(document.myform.bal.value);
+			itemsTotal = parseInt(document.myform.itemsTotal.value);
+			creditTotal = parseInt(document.myform.creditTotal.value);
+			creditLimit = parseInt(document.myform.creditLimit.value);
+			
+			var newBalance = (bal + itemsTotal) - creditTotal;
+			if (newBalance < creditLimit) {
+				var difference = creditLimit - newBalance;
+				document.myform.result.value = "Your new balance is: " + newBalance + "\nYou have not exceeded the credit limit. \nCredit available: " + difference;
+			}
+			else {
+				var difference = newBalance - creditLimit;
+				document.myform.result.value = "Your new balance is: " + newBalance + "\nYou have exceeded the credit limit by " + difference;
+			}
+		};
+	</script>
+
+	<script>
+		$(document).ready(function(){
+		    $("button").click(function(){
+		    	$("#result").css({
+			        "color":"white",
+			        "background-color":"#2e8439",
+			        "font-family":"Arial",
+			        "font-size":"20px",
+			        "padding":"5px"
+		        });
+		    });
+		});
+	</script>
+
+</head>
+<body>
+	<div id="contents">
+		<form name="myform">
+			<table>
+				<tr>
+					<td>Description</td>
+					<td>Enter Amount:</td>
+				</tr>
+				<tr>
+					<td>Account number:</td>
+					<td><input type="text" size="10" name="accnum"></td>
+				</tr>
+				<tr>
+					<td>Beginning balance:</td>
+					<td><input type="text" size="10" name="bal"></td>
+				</tr>
+				<tr>
+					<td>Total of all items charged this month:</td>
+					<td><input type="text" size="10" name="itemsTotal"></td>
+				</tr>
+				<tr>
+					<td>Total of all credits applied this month:</td>
+					<td><input type="text" size="10" name="creditTotal"></td>
+				</tr>
+				<tr>
+					<td>Allowed credit limit:</td>
+					<td><input type="text" size="10" name="creditLimit"></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="center"><input type="button" onclick="calc()" value="Calculate">&nbsp<input type="reset" value="Reset"></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="center">New Balance:<br><textarea rows="4" cols="38" name="result" id="result"></textarea></td>
+				</tr>
+			</table>
+		</form>
+		<br>
+		<button>Click to change Textarea Display</button>
+	</div>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>	
+	<script src="js/gAnalytics.js"></script>
+</body>
+</html>

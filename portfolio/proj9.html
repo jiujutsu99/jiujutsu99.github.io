@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Project 9</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rajdhani">
+	<link rel="stylesheet" type="text/css" href="css/proj9.css">
+	<script>
+		var num1, num2;
+
+		function generateQuestion() {
+			num1 = Math.floor(Math.random()*10);
+			num2 = Math.floor(Math.random()*10);
+			document.getElementById("question").innerHTML = "What is " + num1 + " times " + num2 + "?";
+		};
+
+		function submitAnswer() {
+			var again, answer;
+			answer = document.myform.result.value;
+			if (isNaN(answer) || answer == "") {
+				alert("Your answer is not a number");
+				return;
+			}
+			answer = parseInt(answer);
+			if (answer == num1*num2) {
+				alert("Very good!");
+				again = confirm("Do you want to continue playing?");
+				if (again) {
+					document.forms.myform.reset();
+					generateQuestion();
+				}
+			} else {
+				alert("No. Please try again");
+				document.forms.myform.reset();
+			}
+		};
+	</script>
+</head>
+<body>
+	<div id="contents">
+		<form name="myform">
+			<table>
+				<tr>
+					<td colspan="2" class="title">Children's Multiplication Learning Program</td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="button" onclick="generateQuestion()" value="Click me to get a question!"></td>
+				</tr>
+				<tr>
+					<td>Question:</td>
+					<td><div id="question"></div></td>
+				</tr>
+				<tr>
+					<td>Your answer:</td>
+					<td><input type="text" size="15" name="result"></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="button" onclick="submitAnswer()" value="Submit Answer">&nbsp<input type="reset" value="Reset"></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>	
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/gAnalytics.js"></script>
+</body>
+</html>

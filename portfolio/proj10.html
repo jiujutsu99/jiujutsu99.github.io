@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Project 10</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rajdhani">
+	<link rel="stylesheet" type="text/css" href="css/proj10.css">
+	<script>
+		var point;
+		var isPointPresent = false;;
+		function roll() {
+			var die1 = Math.floor(1 + Math.random()*6);
+			var die2 = Math.floor(1 + Math.random()*6);
+			var sum = die1 + die2;
+			document.myform.die1.value = die1;
+			document.myform.die2.value = die2;
+			document.myform.sum.value = sum;
+			if (!isPointPresent) {
+				if (sum == 7 || sum == 11)
+					document.getElementById("result").innerHTML = "Display: Player wins. Click Roll Dice to play again.";
+				else if (sum == 2 || sum == 3 || sum == 12)
+					document.getElementById("result").innerHTML = "Display: Player loses. Click Roll Dice to play again.";
+				else if (sum >= 4 && sum <= 6 || sum >=8 && sum <= 10) {
+					point = sum;
+					isPointPresent = true;
+					document.myform.point.value = sum;
+					document.getElementById("result").innerHTML = "Display: Roll again.";
+				}
+			} else {
+				if (sum == point) {
+					document.getElementById("result").innerHTML = "Display: Player wins. Click Roll Dice to play again.";
+					isPointPresent = false;
+				}
+				if (sum == 7) {
+					document.getElementById("result").innerHTML = "Display: Player loses. Click Roll Dice to play again.";
+					isPointPresent = false;
+				}
+			}
+		};
+	</script>
+</head>
+<body>
+	<div id="contents">
+		<form name="myform">
+			<table>
+				<tr>
+					<td colspan="2" class="title">Craps Simulation</td>
+				</tr>
+				<tr>
+					<td>Die 1</td>
+					<td><input type="text" name="die1" size="10"></td>
+				</tr>
+				<tr>
+					<td>Die 2</td>
+					<td><input type="text" name="die2" size="10"></td>
+				</tr>
+				<tr>
+					<td>Sum</td>
+					<td><input type="text" name="sum" size="10"></td>
+				</tr>
+				<tr>
+					<td>Point</td>
+					<td><input type="text" name="point" size="10"></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="button" onclick="roll()" value="Roll Dice"></td>
+				</tr>
+			</table>
+		</form>
+		<div id="result"></div>
+	</div>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>	
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/gAnalytics.js"></script>
+</body>
+</html>
