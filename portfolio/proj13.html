@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Project 13</title>
+	<meta name="viewport" content="width=device-width initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Pompiere|Yanone+Kaffeesatz:400,200' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/proj13.css">
+</head>
+<body>
+	<section>
+		<div class="container">
+			<script>
+				function compound(principal, rate, years) {
+					return parseInt(principal) * Math.pow((1+parseFloat(rate)), parseInt(years));
+				}
+
+				var principal = 1000;
+
+				for (var r = 5; r <= 10; r++) {
+					var rate = r/100;
+					document.write("<div class='col-lg-4'><table class='content'><tr><th>Year</th><th>Amount on deposit</th><th>Interest Rate</th></tr>");
+					for (var y = 1; y < 11; y++) {
+						document.write("<tr>");
+						document.write("<td>" + y + "</td>");
+						document.write("<td>$" + compound(principal, rate, y).toFixed(2) + "</td>");
+						document.write("<td>" + rate + "</td>");
+						document.write("</tr>");
+					}
+					document.write("</table></div>");
+				}
+			</script>
+		</div>
+	</section>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript">
+      	$(function() {
+        	$("table tr:nth-child(even)").addClass("striped");
+      	});
+    </script>
+    <script src="js/gAnalytics.js"></script>
+</body>
+</html>

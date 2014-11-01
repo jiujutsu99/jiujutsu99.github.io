@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Project 14</title>
+	<meta name="viewport" content="width=device-width initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Pompiere|Yanone+Kaffeesatz:400,200' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/proj14.css">
+	<script>
+		function valid(num) {
+			if (isNaN(num) || num == "")
+				return false;
+			else
+				return true;
+		}
+
+		function calc() {
+			var p = new Array(), qty = new Array(), total = new Array(), totalamt = 0;
+
+			p[0] = document.myform.p1.value;
+			p[1] = document.myform.p2.value;
+			p[2] = document.myform.p3.value;
+			p[3] = document.myform.p4.value;
+			p[4] = document.myform.p5.value;
+
+			qty[0] = document.myform.q1.value;
+			qty[1] = document.myform.q2.value;
+			qty[2] = document.myform.q3.value;
+			qty[3] = document.myform.q4.value;
+			qty[4] = document.myform.q5.value;
+
+			for (var i = 0; i < 5; i++) {
+				if (!valid(qty[i])) {
+					alert("Invalid input");
+					return;
+				}
+			}
+
+			for (var i = 0; i < 5; i++) {
+				switch (parseInt(p[i])) {
+					case 1: total[i] = parseInt(qty[i])*2.98;
+							break;
+					case 2: total[i] = parseInt(qty[i])*4.50;
+							break;
+					case 3: total[i] = parseInt(qty[i])*9.98;
+							break;
+					case 4: total[i] = parseInt(qty[i])*4.49;
+							break;
+					case 5: total[i] = parseInt(qty[i])*6.87;
+							break;
+					default:
+							break;
+				}
+			}
+
+			for (var i = 0; i < 5; i++)
+				totalamt += total[i];
+
+			document.myform.amt1.value = "$" + total[0].toFixed(2);
+			document.myform.amt2.value = "$" + total[1].toFixed(2);
+			document.myform.amt3.value = "$" + total[2].toFixed(2);
+			document.myform.amt4.value = "$" + total[3].toFixed(2);
+			document.myform.amt5.value = "$" + total[4].toFixed(2);
+			document.myform.result.value = "$" + totalamt.toFixed(2);
+		}
+	</script>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<form name="myform">
+				<table class="content">
+					<tr>
+						<td>Product #</td>
+						<td>Quantity</td>
+						<td>Price</td>
+						<td>Amount</td>
+					</tr>
+					<tr>
+						<td><input type="text" size="10" name="p1" value="1" disabled></td>
+						<td><input type="text" size="10" name="q1"></td>
+						<td>$2.98</td>
+						<td><input type="text" size="10" name="amt1"></td>
+					</tr>
+					<tr>
+						<td><input type="text" size="10" name="p2" value="2" disabled></td>
+						<td><input type="text" size="10" name="q2"></td>
+						<td>$4.50</td>
+						<td><input type="text" size="10" name="amt2"></td>
+					</tr>
+					<tr>
+						<td><input type="text" size="10" name="p3" value="3" disabled></td>
+						<td><input type="text" size="10" name="q3"></td>
+						<td>$9.98</td>
+						<td><input type="text" size="10" name="amt3"></td>
+					</tr>
+					<tr>
+						<td><input type="text" size="10" name="p4" value="4" disabled></td>
+						<td><input type="text" size="10" name="q4"></td>
+						<td>$4.49</td>
+						<td><input type="text" size="10" name="amt4"></td>
+					</tr>
+					<tr>
+						<td><input type="text" size="10" name="p5" value="5" disabled></td>
+						<td><input type="text" size="10" name="q5"></td>
+						<td>$6.87</td>
+						<td><input type="text" size="10" name="amt5"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td colspan="2">Total amount sold:</td>
+						<td><input type="text" size="10" name="result"></td>
+					</tr>
+					<tr>
+						<td colspan="4"><input type="button" onclick="calc()" value="Calculate"> &nbsp; <input type="reset" value="Reset"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</section>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/gAnalytics.js"></script>
+</body>
+</html>

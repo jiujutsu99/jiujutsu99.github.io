@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Project 17</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Pompiere|Yanone+Kaffeesatz:400,200' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/proj17.css">
+	<script>
+		function resetsquare() {
+			document.getElementById("output").innerHTML = "";
+		}
+
+		function validate(num) {
+			if (isNaN(num) || num == "" || parseInt(num) < 2 || parseInt(num) > 10)
+				return false;
+			else
+				return true;
+		}
+
+		function display() {
+			var size = document.myform.sqsize.value, output = "<p><pre>";
+			if (!validate(size)) {
+				document.getElementById("output").innerHTML = "Invalid input. Enter a number between 2 and 10.";
+				return;
+			}
+			size = parseInt(size);
+
+			for (var i = 0; i < size; i++) {
+				output += "*&nbsp;";
+			}
+
+			for (var i = 0; i < size-2; i++) {
+				output += "<br>*&nbsp;";
+				for (var j = 0; j < size-2; j++) {
+					output += "&nbsp;&nbsp;";
+				}
+				output += "*&nbsp;";
+			}
+
+			output += "<br>";
+
+			for (var i = 0; i < size; i++) {
+				output += "*&nbsp;";
+			}
+
+			document.getElementById("output").innerHTML = output + "</pre></p>";
+		}
+	</script>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<form name="myform">
+				<table>
+					<tr>
+						<td>Enter size of square to display</td>
+					</tr>
+					<tr>
+						<td><input type="text" size="10" name="sqsize"></td>
+					</tr>
+					<tr>
+						<td><input type="button" onclick="display()" value="Submit"> &nbsp; <input type="reset" value="Reset" onclick="resetsquare()"></td>
+					</tr>
+					<tr>
+						<td><div id="output" class="content"></div></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</section>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/gAnalytics.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Project 16</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	<link href='http://fonts.googleapis.com/css?family=Pompiere|Yanone+Kaffeesatz:400,200' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/proj16.css">
+	<script>
+		function days(num){
+			var htmloutput = "";
+			num = parseInt(num);
+		    switch(num){
+		        case 1: 
+		            htmloutput = "first";     
+		            break;
+		        case 2: 
+		            htmloutput = "second";    
+		            break;
+		        case 3: 
+		            htmloutput = "third";     
+		            break;
+		        case 4: 
+		            htmloutput = "fourth";    
+		            break;
+		        case 5: 
+		            htmloutput = "fifth";     
+		            break;
+		        case 6: 
+		            htmloutput = "sixth";     
+		            break;
+		        case 7: 
+		            htmloutput = "seventh";   
+		            break;
+		        case 8: 
+		            htmloutput = "eighth";    
+		            break;
+		        case 9: 
+		            htmloutput = "ninth";     
+		            break;
+		        case 10:
+		            htmloutput = "tenth";    
+		            break;
+		        case 11: 
+		            htmloutput = "eleventh"; 
+		            break;
+		        case 12: htmloutput = "twelfth";  
+		            break;	
+		    }
+		    return htmloutput;
+		}
+
+		function next(num){
+			var htmloutput = "";
+			num = parseInt(num);
+		    switch(num){
+		        case 12: 
+		            htmloutput = "Twelve drummers drumming,<br>";    
+		            break;
+		        case 11: 
+		            htmloutput = "Eleven pipers piping,<br>";  
+		            break;
+		        case 10: 
+		            htmloutput = "Ten lords a leaping,<br>";   
+		            break;
+		        case 9: 
+		            htmloutput = "Nine ladies dancing,<br>";    
+		            break;
+		        case 8: 
+		            htmloutput = "Eight maids a milking,<br>";  
+		            break;
+		        case 7: 
+		            htmloutput = "Seven swans a swimming,<br>"; 
+		            break;
+		        case 6: 
+		            htmloutput = "Six geese a laying,<br>"; 
+		            break;
+		        case 5: 
+		            htmloutput = "Five golden rings,<br>";  
+		            break;
+		        case 4: 
+		            htmloutput = "Four calling birds,<br>"; 
+		            break;
+		        case 3: 
+		            htmloutput = "Three French Hens,<br>";  
+		            break;
+		        case 2: 
+		            htmloutput = "Two turtle doves<br>";    
+		            break;
+		        case 1: 
+		            htmloutput = ""; 
+		            break;
+		    }
+		    return htmloutput;		}
+
+		function and(num){
+		    switch(num){
+		        case 1: 
+		            output = "A ";  
+		            break;
+		        case 2: 
+		            output = "And a ";  
+		            break;
+		    }
+		    return output;
+		}
+	</script>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="content">
+				<input type="button" value="Animate" id="btn">
+				<div id="tree"><img src="img/christmas_tree.png" width="200" height="220" alt="Christmas Tree"></div>
+				<script>
+					var htmloutput = "";
+					document.write("<h1>The Twelve Days of Christmas</h1>");
+
+					for (var i = 1; i <= 12; i++) {
+					    document.write("<p>On the " + days(i) + " day of Christmas<br>"); 
+					    document.write("My true love gave to me:<br>");
+					    htmloutput = next(i) + htmloutput;
+					    document.write(htmloutput);
+					    document.write("" + and(i) + " partridge in a pear tree.</p><br>");
+					}
+				</script>
+			</div>
+		</div>
+	</section>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script> 
+		$(document).ready(function(){
+		    $("#btn").click(function(){
+			    $("#tree").animate({height:50},"slow");
+			    $("#tree").animate({width:50},"slow");
+			    $("#tree").animate({height:300},"slow");
+			    $("#tree").animate({width:300},"slow");
+		    });
+		});
+	</script> 
+    <script src="js/gAnalytics.js"></script>
+</body>
+</html>

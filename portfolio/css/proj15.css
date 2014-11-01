@@ -1,0 +1,53 @@
+.subnav {
+	font-family: 'Pompiere', sans-serif;
+	font-size: 24px;
+}
+
+.subnav a:hover {
+	text-decoration: none;
+	color: #ff8100;
+}
+
+section h2.heading {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 38px;
+	text-align: center;
+}
+
+section table.content {
+	font-family: 'Pompiere', sans-serif;
+	font-size: 30px;
+	text-align: center;
+}
+
+section {
+	margin: 50px;
+}
+
+table {
+	margin: auto;
+	border: 1px solid black;
+	background-color: #FFFcb1;
+	border-collapse: collapse;
+}
+
+td, th {
+	padding: 10px;
+}
+
+#panel, #flip {
+	padding: 5px;
+	text-align: center;
+	background-color: #fdd4ab;
+	border: 1px solid black;
+	width: 600px;
+	margin: auto;
+}
+
+#panel {
+	display:none;
+}
+
+input {
+	text-align: right;
+}

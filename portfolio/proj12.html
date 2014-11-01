@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Project 12</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Pompiere|Yanone+Kaffeesatz:400,200' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/proj12.css">
+	<script>
+		function valid(num) {
+			if (isNaN(num) || num == "" || parseInt(num) < 0)
+				return false;
+			else
+				return true;
+		}
+
+		function calc() {
+			var hours = new Array(), rate = new Array(), pay = new Array();
+
+			hours[0] = document.myform.emp1hours.value;
+			hours[1] = document.myform.emp2hours.value;
+			hours[2] = document.myform.emp3hours.value;
+			hours[3] = document.myform.emp4hours.value;
+			hours[4] = document.myform.emp5hours.value;
+			hours[5] = document.myform.emp6hours.value;
+
+			rate[0] = document.myform.emp1rate.value;
+			rate[1] = document.myform.emp2rate.value;
+			rate[2] = document.myform.emp3rate.value;
+			rate[3] = document.myform.emp4rate.value;
+			rate[4] = document.myform.emp5rate.value;
+			rate[5] = document.myform.emp6rate.value;
+
+			for (var i = 0; i < 6; i++) {
+				if (!valid(hours[i]) || !valid(rate[i])) {
+					alert("Invalid input");
+					return;
+				}
+			}
+
+			for (var i = 0; i < 6; i++) {
+				if (hours[i] <= 40)
+					pay[i] = hours[i]*rate[i];
+				if (hours[i] > 40) {
+					var overtime = hours[i]-40;
+					pay[i] = 40*rate[i] + overtime*rate[i]*1.5;
+				}
+			}
+
+			document.myform.emp1pay.value = pay[0].toFixed(2);
+			document.myform.emp2pay.value = pay[1].toFixed(2);
+			document.myform.emp3pay.value = pay[2].toFixed(2);
+			document.myform.emp4pay.value = pay[3].toFixed(2);
+			document.myform.emp5pay.value = pay[4].toFixed(2);
+			document.myform.emp6pay.value = pay[5].toFixed(2);
+		}
+	</script>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<form name="myform">
+				<table class="content">
+					<tr>
+						<td colspan="3">Input total hours worked and hourly rate</td>
+					</tr>
+					<tr>
+						<td>Employee</td>
+						<td>Hours Worked</td>
+						<td>Hourly Rate</td>
+						<td>Gross Pay</td>
+					</tr>
+					<tr>
+						<td>Employee 1</td>
+						<td><input type="text" name="emp1hours" size="10"></td>
+						<td><input type="text" name="emp1rate" size="10"></td>
+						<td><input type="text" name="emp1pay" size="10" class="darken" disabled></td>
+					</tr>
+					<tr>
+						<td>Employee 2</td>
+						<td><input type="text" name="emp2hours" size="10"></td>
+						<td><input type="text" name="emp2rate" size="10"></td>
+						<td><input type="text" name="emp2pay" size="10" class="darken" disabled></td>
+					</tr>
+					<tr>
+						<td>Employee 3</td>
+						<td><input type="text" name="emp3hours" size="10"></td>
+						<td><input type="text" name="emp3rate" size="10"></td>
+						<td><input type="text" name="emp3pay" size="10" class="darken" disabled></td>
+					</tr>
+					<tr>
+						<td>Employee 4</td>
+						<td><input type="text" name="emp4hours" size="10"></td>
+						<td><input type="text" name="emp4rate" size="10"></td>
+						<td><input type="text" name="emp4pay" size="10" class="darken" disabled></td>
+					</tr>
+					<tr>
+						<td>Employee 5</td>
+						<td><input type="text" name="emp5hours" size="10"></td>
+						<td><input type="text" name="emp5rate" size="10"></td>
+						<td><input type="text" name="emp5pay" size="10" class="darken" disabled></td>
+					</tr>
+					<tr>
+						<td>Employee 6</td>
+						<td><input type="text" name="emp6hours" size="10"></td>
+						<td><input type="text" name="emp6rate" size="10"></td>
+						<td><input type="text" name="emp6pay" size="10" class="darken" disabled></td>
+					</tr>
+					<tr>
+						<td colspan="3"><input type="button" onclick="calc()" value="Submit"> &nbsp; <input type="reset" onclick="reset()" value="Reset"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</section>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/gAnalytics.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Project 11</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Pompiere|Yanone+Kaffeesatz:400,200' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/proj11.css">
+	<script>
+		function resetInnerHtml1() {
+			document.getElementById("prod1").innerHTML = "";
+			document.getElementById("sum1").innerHTML = "";
+		}
+
+		function resetInnerHtml2() {
+			document.getElementById("prod2").innerHTML = "";
+			document.getElementById("sum2").innerHTML = "";
+		}
+
+		function calc1() {
+			var sum = 0, prod = 1;
+			var sumhtml = "Total sum: 5+8+11+14+17+20 = ";
+			var prodhtml = "Total product: 5*8*11*14*17*20 = ";
+			for (var i = 5; i <= 20; i+=3) {
+				sum += i;
+				prod *= i;
+			}
+			document.getElementById("sum1").innerHTML = sumhtml + sum;
+			document.getElementById("prod1").innerHTML = prodhtml + prod;
+		}
+
+		function calc2() {
+			var sum = 0, prod = 1, counter = 3;
+			var sumhtml = "Total sum: 3+7+11+15+19+23+27+31 = ";
+			var prodhtml = "Total product: 3*7*11*15*19*23*27*31 = ";
+			while (counter <= 31) {
+				sum += counter;
+				prod *= counter;
+				counter += 4;
+			}
+			document.getElementById("sum2").innerHTML = sumhtml + sum;
+			document.getElementById("prod2").innerHTML = prodhtml + prod;
+		}
+	</script>
+</head>
+<body>
+	<section>
+		<div class="container text-center">
+			<div class="col-lg-6">
+				<table id="draggable1" class="content">
+					<tr>
+						<td colspan="2">Part 1a</td>
+					</tr>
+					<tr>
+						<td colspan="2">The product and sum of every third integer from 5 to 20</td>
+					</tr>
+					<tr>
+						<td><div id="sum1"></div></td>
+						<td><div id="prod1"></div></td>
+					</tr>
+					<tr>
+						<td><input type="button" onclick="calc1()" value="Calculate"></td>
+						<td><input type="reset" onclick="resetInnerHtml1()" value="Reset"></td>
+					</tr>
+					<tr>
+						<td colspan="2">Click to drag this box</td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="col-lg-6">
+				<table id="draggable2" class="content">
+					<tr>
+						<td colspan="2">Part 1b</td>
+					</tr>
+					<tr>
+						<td colspan="2">The product and sum of every fourth integer from 3 to 31</td>
+					</tr>
+					<tr>
+						<td><div id="sum2"></div></td>
+						<td><div id="prod2"></div></td>
+					</tr>
+					<tr>
+						<td><input type="button" onclick="calc2()" value="Calculate"></td>
+						<td><input type="reset" onclick="resetInnerHtml2()" value="Reset"></td>
+					</tr>
+					<tr>
+						<td colspan="2">Click to drag this box</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</section>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+	<script>
+		$(function() {
+			$("#draggable1").draggable();
+		});
+
+		$(function() {
+			$("#draggable2").draggable();
+		});
+	</script>
+    <script src="js/gAnalytics.js"></script>
+</body>
+</html>

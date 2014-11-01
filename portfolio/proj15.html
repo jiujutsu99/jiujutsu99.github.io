@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Project 15</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Pompiere|Yanone+Kaffeesatz:400,200' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/proj15.css">
+
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://fog.ccsf.edu/~srubin//jQvalidate.js"></script>
+    <script>
+	    $(document).ready(function() {
+			$("#flip").click(function() {
+			    $("#panel").slideToggle("slow");
+			});
+		});
+
+		$(document).ready(function(){
+			$("#myform").validate({
+				// Rules for each input item
+				rules:
+				{
+					choice: { required: true, number: true, min: 1, max: 3}
+				}
+			});
+		});
+
+		function resetdisplay() {
+			document.getElementById("display").innerHTML = "";
+		}
+
+		function doit() {
+			var htmloutput = "";
+			var choice = document.myform.choice.value;
+
+			if ($("#myform").valid()) {
+				choice = parseInt(choice);
+				switch (choice) {
+					case 1: htmloutput += "<ul type='square'><h3>Unordered List</h3>";
+							break;
+					case 2: htmloutput += "<ol><h3>Ordered Number List</h3>";
+							break;
+					case 3: htmloutput += "<ol type='A'><h3>Ordered Letter List</h3>";
+							break;
+					default:
+							break;
+				}
+
+				for (var i = 1; i < 4; i++) {
+					htmloutput += "<li>List item " + i + " </li>";
+				}
+
+				switch (choice) {
+					case 1: htmloutput += "</ul>";
+							break;
+					case 2: htmloutput += "</ol>";
+							break;
+					case 3: htmloutput += "</ol>";
+							break;
+					default:
+							break;
+				}
+
+				document.getElementById("display").innerHTML = htmloutput;
+			}
+		}
+	</script>
+</head>
+<body>
+	<section>
+		<div class="container text-center">
+			<input type="button" value="Click to show/hide instructions" id="flip">
+			<div id="panel">This page displays examples of three different HTML list formats. Enter 1 to see an unordered list, 2 to see an ordered number list, or 3 to see an ordered letter list.</div>
+			<form name="myform" id="myform">
+				<table>
+					<tr>
+						<td>Enter number here:</td>
+					</tr>
+					<tr>
+						<td><input type="text" name="choice" size="10"></td>
+					</tr>
+					<tr>
+						<td><input type="button" onclick="doit()" value="Submit"> &nbsp; <input type="reset" onclick="resetdisplay()" id="submit" value="Reset"></td>
+					</tr>
+					<tr>
+						<td><div id="display"></div></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</section>
+
+    <script src="js/gAnalytics.js"></script>
+</body>
+</html>
