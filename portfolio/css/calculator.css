@@ -1,0 +1,43 @@
+.container {
+	width: 600px;
+	height: 875px;
+	margin: auto;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 35px;
+}
+
+table {
+	background-color: #a7b5aa;
+	width: 500px;
+	border-spacing: 20px;
+	margin: auto;
+}
+
+td, th {
+	background-color: white;
+	padding: 5px;
+	height: 75px;
+	width: 75px;
+	text-align: center;
+	border-radius: 10px;
+}
+
+#screen {
+	height: 100px;
+	width: 450px;
+	text-align: right;
+	background-color: white;
+	border-radius: 10px;
+}
+
+h1 {
+	text-align: center;
+}
+
+.fontred {
+	color: red;
+}
+
+.bggrey {
+	background-color: #a7b5aa;
+}
