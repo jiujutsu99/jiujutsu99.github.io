@@ -1,0 +1,42 @@
+.container {
+	margin: auto;
+	text-align: center;
+}
+
+.margin-top {
+	margin-top: 50px;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 45px;
+	font-weight: bold;
+}
+
+table {
+	text-align: center;
+	margin: 30px auto;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+td, th {
+	color: #10818b;
+	background-color: #874b25;
+	width: 100px;
+	height: 100px;
+	padding: 10px;
+	border: 1px solid black;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.bgchange {
+	background-color: #bbb9b7;
+}
+
+.fontred {
+	color: red;
+}

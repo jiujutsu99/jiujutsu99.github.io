@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Game of 15</title>
+	<meta name="viewport" content="width=device-width initial-scale=1.0">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="game_of_15.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+		var a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+		var posofsixteen;
+
+		function shuffle() {
+			var N = a.length;
+	        for (var i = 0; i < N; i++) {
+	            // choose index uniformly in [i, N-1]
+	            var r = i + parseInt((Math.random() * (N - i)));
+	            var swap = a[r];
+	            a[r] = a[i];
+	            a[i] = swap;
+	        }
+		}
+
+		function initialize() {
+			if (posofsixteen != null)
+				posofsixteen.html("16");
+			$('.game tr td').each(function(i, val) {
+				if ($(this).html() == '16')
+					$(this).removeClass('bgchange');
+			});
+			shuffle();
+			$('.game tr td').each(function(i, val) {
+				$(this).html(a[i]);
+				if ($(this).html() == '16') {
+					$(this).addClass('bgchange');
+					posofsixteen = $(this);
+				}
+			});
+			posofsixteen.html("");
+		}
+
+		//curr is the object that was clicked
+		function swap(curr) {
+				posofsixteen = curr;
+				$('.game tr td').each(function(i, val) {
+					if ($(this).html() == '16') {
+						$(this).removeClass('bgchange');
+						$(this).html(curr.html());
+					}
+				})
+
+				curr.addClass('bgchange');
+				curr.html('16');
+		}
+
+		$(document).ready(function() {
+			$('.game tr td').mouseover(function() {
+				$(this).addClass('fontred');
+			});
+			$('.game tr td').mouseout(function() {
+				$(this).removeClass('fontred');
+			});
+			
+			$('.game tr td').click(function() {
+				posofsixteen.html("16");
+				if (isnextto16(posofvalue($(this))))
+					swap($(this));
+				posofsixteen.html("");
+			});
+		});
+
+		function isnextto16(curr) {
+			var sixteen = posof16();
+			if (curr == 2 || curr == 3 || curr == 6 || curr == 7 || curr == 10 || curr == 11 
+				|| curr == 14 || curr == 15) 
+			{
+				if (curr - 1 == sixteen || curr + 1 == sixteen || curr - 4 == sixteen 
+					|| curr + 4 == sixteen)
+					return true;
+			} 
+			else if (curr == 1 || curr == 5 || curr == 9 || curr == 13)
+			{
+				if (curr + 1 == sixteen || curr - 4 == sixteen || curr + 4 == sixteen)
+					return true;
+			}
+			else if (curr == 4 || curr == 8 || curr == 12 || curr == 16)
+			{
+				if (curr - 1 == sixteen || curr + 4 == sixteen || curr - 4 == sixteen)
+					return true;
+			}
+			
+			return false;
+		}
+
+		function posof16() {
+			var pos;
+			$('.game tr td').each(function(i, val) {
+				if ($(this).html() == '16')
+					pos = posofvalue($(this));
+			});
+			return pos;
+		}
+
+		function posofvalue(obj) {
+			var pos = obj.attr('tbl-pos');
+			switch (pos) {
+				case 'pos1': return 1;
+				case 'pos2': return 2;
+				case 'pos3': return 3;
+				case 'pos4': return 4;
+				case 'pos5': return 5;
+				case 'pos6': return 6;
+				case 'pos7': return 7;
+				case 'pos8': return 8;
+				case 'pos9': return 9;
+				case 'pos10': return 10;
+				case 'pos11': return 11;
+				case 'pos12': return 12;
+				case 'pos13': return 13;
+				case 'pos14': return 14;
+				case 'pos15': return 15;
+				case 'pos16': return 16;
+					 default: break;
+			}
+		}
+	</script>
+</head>
+<body onload="initialize()">
+	<div class="container">
+		<h3>15 puzzle</h3>
+	</div>
+	
+	<div class="container">
+		<table class="game">
+			<tr>
+				<td tbl-pos="pos1"></td>
+				<td tbl-pos="pos2"></td>
+				<td tbl-pos="pos3"></td>
+				<td tbl-pos="pos4"></td>
+			</tr>
+			<tr>
+				<td tbl-pos="pos5"></td>
+				<td tbl-pos="pos6"></td>
+				<td tbl-pos="pos7"></td>
+				<td tbl-pos="pos8"></td>
+			</tr>
+			<tr>
+				<td tbl-pos="pos9"></td>
+				<td tbl-pos="pos10"></td>
+				<td tbl-pos="pos11"></td>
+				<td tbl-pos="pos12"></td>
+			</tr>
+			<tr>
+				<td tbl-pos="pos13"></td>
+				<td tbl-pos="pos14"></td>
+				<td tbl-pos="pos15"></td>
+				<td tbl-pos="pos16"></td>
+			</tr>
+		</table>
+
+		<input type="button" onclick="initialize()" value="Reset">
+	</div>
+
+	<script src="js/gAnalytics.js"></script>
+</body>
+</html>
