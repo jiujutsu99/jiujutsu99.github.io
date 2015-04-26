@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
-    color: #ff2c00;
+    color: #ffffff;
 }
 
 /*styles the hover appearance of nav bar*/
@@ -85,9 +85,13 @@ h1, h2, h3, h4, h5, h6 {
     color: #fed136;
 }
 
+#activemenu a.active{
+    color: red;
+}
+
 @media(min-width:768px) {
     .navbar-default {
-        padding: 25px 0;
+        padding: 10px;
         border: 0;
         background-color: transparent;
         -webkit-transition: padding .3s;
@@ -107,7 +111,7 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    background-image: url(../img/header-bg.jpg);
+    background-image: url(../img/header-bg2.jpg);
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
