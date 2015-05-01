@@ -241,7 +241,7 @@
                 var id = $(this).attr("href").substring(1);
                 $("body").animate({
                     'scrollTop': $("section#" + id).offset().top
-                });        
+                });
             });
             $("body").scrollTop(1); //forcing window scroll to execute on page load
             $(window).scroll(function(){
@@ -249,8 +249,7 @@
                 timerid = setTimeout(checkactivelink, 50);
             });
 
-            function checkactivelink()
-            {
+            function checkactivelink(){
                 $("section").each(function(){
                     if($(window).scrollTop() == 0)
                         $("#activemenu a").removeClass('active');
