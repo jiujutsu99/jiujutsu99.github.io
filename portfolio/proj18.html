@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Project 18</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rajdhani">
+	<link rel="stylesheet" type="text/css" href="css/proj18.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+
+    <script>
+    	function calc1() {
+    		var beforetaxannual = parseFloat(document.myform.beforetaxannual.value);
+    		var aftertaxannual = parseFloat(document.myform.aftertaxannual.value);
+
+    		document.myform.a1.value = beforetaxannual.toFixed(2);
+    		document.myform.a2.value = (beforetaxannual/12).toFixed(2);
+    		document.myform.a3.value = ((beforetaxannual*2)/52).toFixed(2);
+    		document.myform.a4.value = (beforetaxannual/52).toFixed(2);
+    		document.myform.a5.value = (beforetaxannual/(52*5)).toFixed(2);
+    		document.myform.a6.value = ((beforetaxannual/52)/40).toFixed(2);
+
+    		document.myform.b1.value = aftertaxannual.toFixed(2);
+    		document.myform.b2.value = (aftertaxannual/12).toFixed(2);
+    		document.myform.b3.value = ((aftertaxannual*2)/52).toFixed(2);
+    		document.myform.b4.value = (aftertaxannual/52).toFixed(2);
+    		document.myform.b5.value = (aftertaxannual/(52*5)).toFixed(2);
+    		document.myform.b6.value = ((aftertaxannual/52)/40).toFixed(2);
+
+    		var conversion = 6.24;
+    		if (document.myform.conversion.value != "")
+    			conversion = document.myform.conversion.value;
+    		var rmbbeforetaxannual = beforetaxannual*conversion;
+    		var rmbaftertaxannual = aftertaxannual*conversion;
+
+    		document.myform.c1.value = rmbbeforetaxannual.toFixed(2);
+    		document.myform.c2.value = (rmbbeforetaxannual/12).toFixed(2);
+    		document.myform.c3.value = ((rmbbeforetaxannual*2)/52).toFixed(2);
+    		document.myform.c4.value = (rmbbeforetaxannual/52).toFixed(2);
+    		document.myform.c5.value = (rmbbeforetaxannual/(52*5)).toFixed(2);
+    		document.myform.c6.value = ((rmbbeforetaxannual/52)/40).toFixed(2);
+
+    		document.myform.d1.value = rmbaftertaxannual.toFixed(2);
+    		document.myform.d2.value = (rmbaftertaxannual/12).toFixed(2);
+    		document.myform.d3.value = ((rmbaftertaxannual*2)/52).toFixed(2);
+    		document.myform.d4.value = (rmbaftertaxannual/52).toFixed(2);
+    		document.myform.d5.value = (rmbaftertaxannual/(52*5)).toFixed(2);
+    		document.myform.d6.value = ((rmbaftertaxannual/52)/40).toFixed(2);
+    	}
+
+    	function calc2() {
+    		var beforetaxhourly = parseFloat(document.myform.beforetaxhourly.value);
+
+    		document.myform.a1.value = (beforetaxhourly*2080).toFixed(2);
+    		document.myform.a2.value = ((beforetaxhourly*2080)/12).toFixed(2);
+    		document.myform.a3.value = (beforetaxhourly*80).toFixed(2);
+    		document.myform.a4.value = (beforetaxhourly*40).toFixed(2);
+    		document.myform.a5.value = (beforetaxhourly*8).toFixed(2);
+    		document.myform.a6.value = beforetaxhourly.toFixed(2);
+
+    		var conversion = 6.24;
+    		if (document.myform.conversion.value != "")
+    			conversion = document.myform.conversion.value;
+    		var rmbbeforetaxhourly = beforetaxhourly*conversion;
+
+    		document.myform.c1.value = (rmbbeforetaxhourly*2080).toFixed(2);
+    		document.myform.c2.value = ((rmbbeforetaxhourly*2080)/12).toFixed(2);
+    		document.myform.c3.value = (rmbbeforetaxhourly*80).toFixed(2);
+    		document.myform.c4.value = (rmbbeforetaxhourly*40).toFixed(2);
+    		document.myform.c5.value = (rmbbeforetaxhourly*8).toFixed(2);
+    		document.myform.c6.value = rmbbeforetaxhourly.toFixed(2);
+    	}
+
+    	function calc3() {
+    		var beforetaxannual = parseFloat(document.myform2.beforetaxannual.value);
+    		var aftertaxannual = parseFloat(document.myform2.aftertaxannual.value);
+
+    		document.myform2.a1.value = beforetaxannual.toFixed(2);
+    		document.myform2.a2.value = (beforetaxannual/12).toFixed(2);
+    		document.myform2.a3.value = ((beforetaxannual*2)/52).toFixed(2);
+    		document.myform2.a4.value = (beforetaxannual/52).toFixed(2);
+    		document.myform2.a5.value = (beforetaxannual/(52*5)).toFixed(2);
+    		document.myform2.a6.value = ((beforetaxannual/52)/40).toFixed(2);
+
+    		document.myform2.b1.value = aftertaxannual.toFixed(2);
+    		document.myform2.b2.value = (aftertaxannual/12).toFixed(2);
+    		document.myform2.b3.value = ((aftertaxannual*2)/52).toFixed(2);
+    		document.myform2.b4.value = (aftertaxannual/52).toFixed(2);
+    		document.myform2.b5.value = (aftertaxannual/(52*5)).toFixed(2);
+    		document.myform2.b6.value = ((aftertaxannual/52)/40).toFixed(2);
+
+    		var conversion = 6.24;
+    		if (document.myform2.conversion.value != "")
+    			conversion = document.myform2.conversion.value;
+    		var rmbbeforetaxannual = beforetaxannual*conversion;
+    		var rmbaftertaxannual = aftertaxannual*conversion;
+
+    		document.myform2.c1.value = rmbbeforetaxannual.toFixed(2);
+    		document.myform2.c2.value = (rmbbeforetaxannual/12).toFixed(2);
+    		document.myform2.c3.value = ((rmbbeforetaxannual*2)/52).toFixed(2);
+    		document.myform2.c4.value = (rmbbeforetaxannual/52).toFixed(2);
+    		document.myform2.c5.value = (rmbbeforetaxannual/(52*5)).toFixed(2);
+    		document.myform2.c6.value = ((rmbbeforetaxannual/52)/40).toFixed(2);
+
+    		document.myform2.d1.value = rmbaftertaxannual.toFixed(2);
+    		document.myform2.d2.value = (rmbaftertaxannual/12).toFixed(2);
+    		document.myform2.d3.value = ((rmbaftertaxannual*2)/52).toFixed(2);
+    		document.myform2.d4.value = (rmbaftertaxannual/52).toFixed(2);
+    		document.myform2.d5.value = (rmbaftertaxannual/(52*5)).toFixed(2);
+    		document.myform2.d6.value = ((rmbaftertaxannual/52)/40).toFixed(2);
+    	}
+
+    	function calc4() {
+    		var beforetaxhourly = parseFloat(document.myform2.beforetaxhourly.value);
+
+    		document.myform2.a1.value = (beforetaxhourly*2080).toFixed(2);
+    		document.myform2.a2.value = ((beforetaxhourly*2080)/12).toFixed(2);
+    		document.myform2.a3.value = (beforetaxhourly*80).toFixed(2);
+    		document.myform2.a4.value = (beforetaxhourly*40).toFixed(2);
+    		document.myform2.a5.value = (beforetaxhourly*8).toFixed(2);
+    		document.myform2.a6.value = beforetaxhourly.toFixed(2);
+
+    		var conversion = 6.24;
+    		if (document.myform2.conversion.value != "")
+    			conversion = document.myform2.conversion.value;
+    		var rmbbeforetaxhourly = beforetaxhourly*conversion;
+
+    		document.myform2.c1.value = (rmbbeforetaxhourly*2080).toFixed(2);
+    		document.myform2.c2.value = ((rmbbeforetaxhourly*2080)/12).toFixed(2);
+    		document.myform2.c3.value = (rmbbeforetaxhourly*80).toFixed(2);
+    		document.myform2.c4.value = (rmbbeforetaxhourly*40).toFixed(2);
+    		document.myform2.c5.value = (rmbbeforetaxhourly*8).toFixed(2);
+    		document.myform2.c6.value = rmbbeforetaxhourly.toFixed(2);
+    	}
+    </script>
+</head>
+<body>
+	<div id="contents">
+		<form name="myform">
+			<table>
+				<tr>
+					<td colspan="9">Salary Info Calculator</td>
+				</tr>
+				<tr>
+					<td>Enter Annual Income</td>
+					<td>Enter Hourly Rate</td>
+					<td>*In USD*</td>
+					<td>Yearly</td>
+					<td>Monthly</td>
+					<td>Biweekly</td>
+					<td>Weekly</td>
+					<td>Daily</td>
+					<td>Hourly</td>
+				</tr>
+				<tr>
+					<td>Before Tax <input type="text" size="10" name="beforetaxannual"></td>
+					<td>Before Tax <input type="text" size="10" name="beforetaxhourly"></td>
+					<td>Gross Income</td>
+					<td><input type="text" size="10" name="a1"></td>
+					<td><input type="text" size="10" name="a2"></td>
+					<td><input type="text" size="10" name="a3"></td>
+					<td><input type="text" size="10" name="a4"></td>
+					<td><input type="text" size="10" name="a5"></td>
+					<td><input type="text" size="10" name="a6"></td>
+				</tr>
+				<tr>
+					<td>After Tax <input type="text" size="10" name="aftertaxannual"></td>
+					<td></td>
+					<td>Take Home</td>
+					<td><input type="text" size="10" name="b1"></td>
+					<td><input type="text" size="10" name="b2"></td>
+					<td><input type="text" size="10" name="b3"></td>
+					<td><input type="text" size="10" name="b4"></td>
+					<td><input type="text" size="10" name="b5"></td>
+					<td><input type="text" size="10" name="b6"></td>
+				</tr>
+				<tr>
+					<td><input type="button" onclick="calc1()" value="Calculate"></td>
+					<td><input type="button" onclick="calc2()" value="Calculate"></td>
+					<td><input type="reset" value="Reset"</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td colspan="2">Enter USD to RMB Conversion Rate</td>
+					<td>*In RMB*</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><input type="text" size="10" name="conversion"></td>
+					<td></td>
+					<td>Gross Income</td>
+					<td><input type="text" size="10" name="c1"></td>
+					<td><input type="text" size="10" name="c2"></td>
+					<td><input type="text" size="10" name="c3"></td>
+					<td><input type="text" size="10" name="c4"></td>
+					<td><input type="text" size="10" name="c5"></td>
+					<td><input type="text" size="10" name="c6"></td>
+				</tr>
+				<tr>
+					<td colspan="2">Default 1 USD = 6.24 RMB (5/10/15)</td>
+					<td>Take Home</td>
+					<td><input type="text" size="10" name="d1"></td>
+					<td><input type="text" size="10" name="d2"></td>
+					<td><input type="text" size="10" name="d3"></td>
+					<td><input type="text" size="10" name="d4"></td>
+					<td><input type="text" size="10" name="d5"></td>
+					<td><input type="text" size="10" name="d6"></td>
+				</tr>
+			</table>
+		</form>
+
+		<br>
+
+		<form name="myform2">
+			<table>
+				<tr>
+					<td colspan="9">Salary Info Calculator</td>
+				</tr>
+				<tr>
+					<td>Enter Annual Income</td>
+					<td>Enter Hourly Rate</td>
+					<td>*In USD*</td>
+					<td>Yearly</td>
+					<td>Monthly</td>
+					<td>Biweekly</td>
+					<td>Weekly</td>
+					<td>Daily</td>
+					<td>Hourly</td>
+				</tr>
+				<tr>
+					<td>Before Tax <input type="text" size="10" name="beforetaxannual"></td>
+					<td>Before Tax <input type="text" size="10" name="beforetaxhourly"></td>
+					<td>Gross Income</td>
+					<td><input type="text" size="10" name="a1"></td>
+					<td><input type="text" size="10" name="a2"></td>
+					<td><input type="text" size="10" name="a3"></td>
+					<td><input type="text" size="10" name="a4"></td>
+					<td><input type="text" size="10" name="a5"></td>
+					<td><input type="text" size="10" name="a6"></td>
+				</tr>
+				<tr>
+					<td>After Tax <input type="text" size="10" name="aftertaxannual"></td>
+					<td></td>
+					<td>Take Home</td>
+					<td><input type="text" size="10" name="b1"></td>
+					<td><input type="text" size="10" name="b2"></td>
+					<td><input type="text" size="10" name="b3"></td>
+					<td><input type="text" size="10" name="b4"></td>
+					<td><input type="text" size="10" name="b5"></td>
+					<td><input type="text" size="10" name="b6"></td>
+				</tr>
+				<tr>
+					<td><input type="button" onclick="calc3()" value="Calculate"></td>
+					<td><input type="button" onclick="calc4()" value="Calculate"></td>
+					<td><input type="reset" value="Reset"</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td colspan="2">Enter USD to RMB Conversion Rate</td>
+					<td>*In RMB*</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><input type="text" size="10" name="conversion"></td>
+					<td></td>
+					<td>Gross Income</td>
+					<td><input type="text" size="10" name="c1"></td>
+					<td><input type="text" size="10" name="c2"></td>
+					<td><input type="text" size="10" name="c3"></td>
+					<td><input type="text" size="10" name="c4"></td>
+					<td><input type="text" size="10" name="c5"></td>
+					<td><input type="text" size="10" name="c6"></td>
+				</tr>
+				<tr>
+					<td colspan="2">Default 1 USD = 6.24 RMB (5/10/15)</td>
+					<td>Take Home</td>
+					<td><input type="text" size="10" name="d1"></td>
+					<td><input type="text" size="10" name="d2"></td>
+					<td><input type="text" size="10" name="d3"></td>
+					<td><input type="text" size="10" name="d4"></td>
+					<td><input type="text" size="10" name="d5"></td>
+					<td><input type="text" size="10" name="d6"></td>
+				</tr>
+			</table>
+		</form>
+
+		<br>
+	</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    <script>
+    	$(function() {
+    		$( document ).tooltip();
+    	});
+    </script>
+    <script src="js/gAnalytics.js"></script>
+</body>
+</html>
