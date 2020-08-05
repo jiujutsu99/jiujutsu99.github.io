@@ -7,7 +7,7 @@ Screenshots
 ![Portfolio image](site1.png "Screenshot of the portfolio website")
 
 
-![Portfolio image](site2.png "Screenshot of the portfolio website")
+![Portfolio image](site3.png "Screenshot of the portfolio website")
 
 
 Developed by
